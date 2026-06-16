@@ -115,6 +115,30 @@ export default {
       }
     });
 
+    // 3b. Merge adjacent columns-media blocks into a single multi-row block.
+    // The source renders mirrored media+text rows as separate containers; in EDS
+    // these belong in one columns block where each row is one media+text pair.
+    // WebImporter.Blocks.createBlock emits a <table> whose first row is the
+    // block name; merge subsequent tables' content rows (skipping their name row)
+    // into the first adjacent columns-media table.
+    const isColumnsMediaTable = (el) => el
+      && el.tagName === 'TABLE'
+      && el.rows.length
+      && el.rows[0].textContent.trim().replace(/\s+/g, '-').toLowerCase() === 'columns-media';
+
+    main.querySelectorAll('table').forEach((table) => {
+      if (!isColumnsMediaTable(table)) return;
+      let next = table.nextElementSibling;
+      while (isColumnsMediaTable(next)) {
+        const tbody = table.tBodies[0] || table;
+        // move the content rows (all rows except the block-name row) over
+        Array.from(next.rows).slice(1).forEach((row) => tbody.appendChild(row));
+        const toRemove = next;
+        next = next.nextElementSibling;
+        toRemove.remove();
+      }
+    });
+
     // 4. afterTransform cleanup + section breaks/metadata
     executeTransformers('afterTransform', main, payload);
 

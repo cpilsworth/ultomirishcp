@@ -568,6 +568,18 @@ var CustomImportScript = (() => {
           console.warn(`No parser found for block: ${block.name}`);
         }
       });
+      const isColumnsMediaTable = (el) => el && el.tagName === "TABLE" && el.rows.length && el.rows[0].textContent.trim().replace(/\s+/g, "-").toLowerCase() === "columns-media";
+      main.querySelectorAll("table").forEach((table) => {
+        if (!isColumnsMediaTable(table)) return;
+        let next = table.nextElementSibling;
+        while (isColumnsMediaTable(next)) {
+          const tbody = table.tBodies[0] || table;
+          Array.from(next.rows).slice(1).forEach((row) => tbody.appendChild(row));
+          const toRemove = next;
+          next = next.nextElementSibling;
+          toRemove.remove();
+        }
+      });
       executeTransformers("afterTransform", main, payload);
       const hr = document.createElement("hr");
       main.appendChild(hr);
