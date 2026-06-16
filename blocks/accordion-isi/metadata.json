@@ -1,0 +1,38 @@
+{
+  "variantName": "accordion-isi",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-06-16T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://ultomirishcp.com/",
+    "originPage": "ULTOMIRIS HCP homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "faq",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "expandable label + extensive rich-text body",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Important Safety Information (ISI) boxed warning sections",
+      "expandable regulatory / legal boilerplate reused across pages",
+      "long-form collapsible content"
+    ],
+    "notSuitableFor": [
+      "short interactive Q&A where a generic accordion suffices",
+      "non-regulatory marketing content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index", "/about-ultomiris"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-16T19:00:00.000Z"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-16T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://ultomirishcp.com/",
+    "originPage": "ULTOMIRIS HCP homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "media-text",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "media + text promo rows (image beside heading/description/CTA)",
+      "alternating left/right image-text layouts"
+    ],
+    "notSuitableFor": [
+      "repeating uniform card grids (use a cards variant)",
+      "tabular or comparison data"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-16T00:00:00.000Z"
+  }
+}

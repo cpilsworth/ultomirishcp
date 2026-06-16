@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://ultomirishcp.com/resources-and-support",
+  "path": "resources-and-support",
+  "timestamp": "2026-06-16T19:40:38.914Z",
+  "title": "Resources and Support | ULTOMIRIS® (ravulizumab-cwvz) | Official HCP Website",
+  "template": "indication-landing",
+  "blocks": [
+    "cards-indication",
+    "accordion-isi"
+  ]
+}

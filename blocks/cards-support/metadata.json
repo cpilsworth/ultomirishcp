@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-support",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-16T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://ultomirishcp.com/",
+    "originPage": "ULTOMIRIS HCP homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "support / resource cards with icon, description, and one CTA",
+      "two- or three-up promo card rows on light backgrounds"
+    ],
+    "notSuitableFor": [
+      "text-only selector grids (use cards-indication)",
+      "contact cards with phone/email dual CTAs (use cards-contact)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-16T00:00:00.000Z"
+  }
+}

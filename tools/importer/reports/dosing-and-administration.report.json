@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://ultomirishcp.com/dosing-and-administration",
+  "path": "dosing-and-administration",
+  "timestamp": "2026-06-16T19:40:32.685Z",
+  "title": "Dosing and Administration | ULTOMIRIS® (ravulizumab-cwvz) | Official HCP",
+  "template": "indication-landing",
+  "blocks": [
+    "cards-indication",
+    "accordion-isi"
+  ]
+}
