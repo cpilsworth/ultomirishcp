@@ -1,27 +1,130 @@
+/* cards-support: two side-by-side support cards on a warm-grey tint.
+   Values extracted from source (ultomirishcp.com homepage support section):
+   - each card sits on warm-grey tint #F9F7F6 (no border, no radius, no shadow)
+   - centered content: icon, teal-dark heading, centered paragraph, outlined CTA
+   - heading #014B44 24px/32px weight 700
+   - paragraph #2B2B2B 16px/24px
+   - CTA: outlined magenta #A73A64, 2px border, 3px radius, trailing arrow,
+     transparent background (matches columns-media button) ~56px tall
+   - 2-up on desktop with ~24px gutter, stacking to 1-up on mobile
+   - section ~64px vertical rhythm */
+
+/* Decorated DOM:
+   .cards-support > ul > li > div.cards-support-card-body
+     > p > picture > img   (icon)
+     > h3                  (heading)
+     > p                   (description)
+     > p > a               (CTA link, plain anchor styled as outlined button) */
+
 .cards-support > ul {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
 }
 
+/* Card: warm-grey tint, no border/shadow */
 .cards-support > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  display: flex;
+  background-color: var(--brand-tint-grey);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
 }
 
+/* Card body: centered content, generous padding */
 .cards-support .cards-support-card-body {
-  margin: 16px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 40px 32px;
+  text-align: center;
 }
 
-.cards-support .cards-support-card-image {
+/* Description paragraph (base) */
+.cards-support .cards-support-card-body p {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Icon at the top */
+.cards-support .cards-support-card-body > p:first-child {
+  margin: 0 0 8px;
   line-height: 0;
 }
 
-.cards-support > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-support .cards-support-card-body > p:first-child img {
+  width: auto;
+  max-width: 220px;
+  height: auto;
+}
+
+/* CTA paragraph wrapper */
+.cards-support .cards-support-card-body > p:last-child {
+  margin: 8px 0 0;
+}
+
+/* Heading: teal-dark */
+.cards-support .cards-support-card-body h3 {
+  margin: 0 0 12px;
+  color: var(--brand-teal-dark);
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+/* CTA button: outlined magenta with trailing arrow (matches columns-media).
+   EDS leaves this as a plain link inside its own <p>, so target that. */
+.cards-support .cards-support-card-body > p > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  border: 2px solid var(--brand-magenta);
+  border-radius: 3px;
+  padding: 14px 20px;
+  background-color: transparent;
+  color: var(--brand-magenta);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.cards-support .cards-support-card-body > p > a:hover,
+.cards-support .cards-support-card-body > p > a:focus-visible {
+  background-color: transparent;
+  color: var(--brand-magenta);
+  text-decoration: none;
+}
+
+/* Trailing arrow icon appended via ::after (source arrow_right) */
+.cards-support .cards-support-card-body > p > a::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.163 31.041"><path d="M18.643,0l-1.92,1.921L28.964,14.162H0v2.716H28.965L16.723,29.12l1.921,1.92L34.164,15.52Z"/></svg>') no-repeat center / contain;
+}
+
+/* Desktop: two columns side-by-side with a ~24px gutter */
+@media (width >= 900px) {
+  .cards-support > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .cards-support .cards-support-card-body {
+    padding: 48px 40px;
+  }
 }

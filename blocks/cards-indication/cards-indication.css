@@ -1,27 +1,89 @@
+/* cards-indication -- design migrated from ultomirishcp.com
+   4-up grid of indication cards on a light-teal tint, teal headings,
+   dark body text, and a filled magenta CTA button with a right arrow. */
+
 .cards-indication > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
+/* card */
 .cards-indication > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  display: flex;
+  background-color: var(--brand-tint-teal);
+  border: none;
+  border-radius: 0;
 }
 
+/* card body: stretch full height so the CTA pins to the bottom */
 .cards-indication .cards-indication-card-body {
-  margin: 16px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0;
+  padding: 24px;
 }
 
-.cards-indication .cards-indication-card-image {
-  line-height: 0;
+/* description paragraph(s) */
+.cards-indication .cards-indication-card-body p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
 }
 
-.cards-indication > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+/* the magenta CTA lives in the last paragraph; push it to the bottom */
+.cards-indication .cards-indication-card-body p:last-child {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* filled magenta CTA button with arrow */
+.cards-indication .cards-indication-card-body p:last-child a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 3px;
+  background-color: var(--brand-magenta);
+  color: #fff;
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.cards-indication .cards-indication-card-body p:last-child a:any-link::after {
+  content: "";
+  width: 17px;
+  height: 17px;
+  background-color: currentcolor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="black" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+  flex: none;
+}
+
+.cards-indication .cards-indication-card-body p:last-child a:hover,
+.cards-indication .cards-indication-card-body p:last-child a:focus-visible {
+  background-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* tablet: 2-up */
+@media (width >= 600px) {
+  .cards-indication > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: 4-up */
+@media (width >= 900px) {
+  .cards-indication > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

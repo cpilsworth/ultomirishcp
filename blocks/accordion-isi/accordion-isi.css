@@ -1,61 +1,110 @@
-.accordion-isi details {
-  border: 1px solid #dadada;
+/*
+ * Accordion ISI (Important Safety Information) block
+ * Visual design migrated from ultomirishcp.com awt-container-warning.
+ * Teal title bar (always visible) with expand/collapse chevron, and a
+ * bordered body box containing regulatory rich text.
+ */
+
+.accordion-isi .accordion-isi-item {
+  border: 0;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-.accordion-isi details + details {
-  margin-top: 24px;
-}
-
-.accordion-isi details p {
-  margin-bottom: 0.8em;
-}
-
-.accordion-isi details summary {
+/* ----- Title bar (summary) ----- */
+.accordion-isi .accordion-isi-item-label {
   position: relative;
-  padding: 0 16px;
-  padding-right: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  margin: 0;
+  background-color: var(--brand-teal);
+  color: #fff;
   cursor: pointer;
   list-style: none;
-  overflow: auto;
-  transition: background-color 0.2s;
 }
 
-.accordion-isi details[open] summary {
-  background-color: var(--light-color);
-}
-
-.accordion-isi details summary:focus,
-.accordion-isi details summary:hover {
-  background-color: var(--light-color);
-}
-
-.accordion-isi details summary::-webkit-details-marker {
+.accordion-isi .accordion-isi-item-label::-webkit-details-marker {
   display: none;
 }
 
-.accordion-isi details summary::after {
+.accordion-isi .accordion-isi-item-label p {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+/* expand/collapse chevron */
+.accordion-isi .accordion-isi-item-label::after {
   content: '';
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  transform: translateY(-50%) rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid;
-  border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  margin-left: 16px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-3px);
+  transition: transform 0.2s ease;
 }
 
-.accordion-isi details[open] summary::after {
-  transform: translateY(-50%) rotate(-45deg);
+.accordion-isi .accordion-isi-item[open] .accordion-isi-item-label::after {
+  transform: rotate(-135deg) translateY(-3px);
 }
 
-.accordion-isi details .accordion-isi-item-body {
-  padding: 0 16px;
+/* ----- Body box ----- */
+.accordion-isi .accordion-isi-item-body {
+  margin-top: 15px;
+  padding: 32px 16px;
+  border: 1px solid var(--text-color);
+  color: #000;
 }
 
-.accordion-isi details[open] .accordion-isi-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
+/* sub-headings (CONTRAINDICATIONS, WARNING, etc.) */
+.accordion-isi .accordion-isi-item-body h3 {
+  margin: 0;
+  color: var(--brand-teal-dark);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+/* the centered boxed WARNING heading */
+.accordion-isi .accordion-isi-item-body > h3:first-child {
+  text-align: center;
+}
+
+/* body paragraphs */
+.accordion-isi .accordion-isi-item-body p {
+  margin: 16px 0;
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* links */
+.accordion-isi .accordion-isi-item-body a:any-link {
+  color: var(--brand-magenta);
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+/* lists */
+.accordion-isi .accordion-isi-item-body ul,
+.accordion-isi .accordion-isi-item-body ol {
+  margin: 16px 0;
+  padding: 0 0 0 40px;
+}
+
+.accordion-isi .accordion-isi-item-body ul {
+  list-style-type: disc;
+}
+
+.accordion-isi .accordion-isi-item-body li {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
 }

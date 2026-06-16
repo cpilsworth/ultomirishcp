@@ -1,27 +1,124 @@
+/* Block: cards-contact -- contact band with magenta->orange gradient, white text,
+   two outlined contact cards separated by a vertical divider.
+   Values from ultomirishcp.com source computed styles + visual reference. */
+
+/* magenta -> orange gradient band, white text */
+.cards-contact {
+  background-image: linear-gradient(90deg, var(--brand-magenta) 0%, var(--brand-orange) 100%);
+  color: #fff;
+  padding: 40px 24px;
+}
+
+/* cards list: 1-up mobile, 2-up desktop */
 .cards-contact > ul {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .cards-contact > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  border: 0;
+  background-color: transparent;
+  padding: 24px 16px;
+  text-align: center;
 }
 
 .cards-contact .cards-contact-card-body {
-  margin: 16px;
-}
-
-.cards-contact .cards-contact-card-image {
-  line-height: 0;
-}
-
-.cards-contact > ul > li img {
+  margin: 0 auto;
+  max-width: 280px;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* heading */
+.cards-contact h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0 0 6px;
+}
+
+/* phone / email info text */
+.cards-contact .cards-contact-info {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 8px 0 16px;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.cards-contact .cards-contact-info a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+/* action buttons row: Call + Email side by side */
+.cards-contact .cards-contact-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 0;
+}
+
+/* outlined white buttons with icon (override global a.button) */
+.cards-contact .cards-contact-actions a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  min-width: 96px;
+}
+
+.cards-contact .cards-contact-actions a.button:any-link:hover,
+.cards-contact .cards-contact-actions a.button:any-link:focus-visible {
+  background-color: #fff;
+  color: var(--brand-magenta);
+  border-color: #fff;
+}
+
+.cards-contact .cards-contact-actions a.button svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+/* desktop: 2-up with vertical divider between cards */
+@media (width >= 900px) {
+  .cards-contact {
+    padding: 64px 24px;
+  }
+
+  .cards-contact > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-contact > ul > li {
+    padding: 8px 32px;
+  }
+
+  .cards-contact .cards-contact-card-body {
+    max-width: 340px;
+  }
+
+  .cards-contact > ul > li + li {
+    border-left: 1px solid rgb(255 255 255 / 40%);
+  }
 }
