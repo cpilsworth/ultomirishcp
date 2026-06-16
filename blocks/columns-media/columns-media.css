@@ -1,10 +1,43 @@
+/* columns-media: two mirrored media + text promo rows on a warm-grey band.
+   Values extracted from source (ultomirishcp.com homepage):
+   - band background #F9F7F6, 64px vertical padding
+   - 2-column ~50/50 layout, ~24px gap, vertically centered
+   - heading teal #014B44 24px/32px weight 700
+   - paragraph 16px/24px
+   - CTA: outlined magenta #A73A64, 2px border, radius 3px, padding 14px,
+     16px/24px weight 600, arrow icon, transparent background (stays on hover) */
+
+/* Full-bleed warm-grey band.
+   The wrapper is itself a direct `.section > div` (max-width 1200px, side
+   padding from global styles), so we break it out to the full viewport width
+   and re-pad the inner content. Selector specificity is raised above
+   `main > .section > div` so these overrides win. */
+main .section > .columns-media-wrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 48px 24px;
+  background-color: #f9f7f6;
+}
+
+.columns-media.block {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Rows: mobile-first stacked. Image cell first so image sits above text. */
 .columns-media > div {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
-.columns-media img {
-  width: 100%;
+/* Spacing between the two stacked promo rows
+   (source renders them as adjacent bands; reproduce the rhythm here). */
+.columns-media > div + div {
+  margin-top: 48px;
 }
 
 .columns-media > div > div {
@@ -15,19 +48,86 @@
   order: 0;
 }
 
-.columns-media > div > .columns-media-img-col img {
+/* Images fill their column edge to edge */
+.columns-media img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
+/* Typography */
+.columns-media h3 {
+  margin: 0;
+  color: #014b44;
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.columns-media p {
+  margin: 16px 0 0;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* CTA button: outlined magenta pill-less (3px radius) with trailing arrow.
+   Targets the plain link EDS leaves in the cell (no .button class applied). */
+.columns-media .columns-media-text a,
+.columns-media > div > div:not(.columns-media-img-col) > p > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  border: 2px solid #a73a64;
+  border-radius: 3px;
+  padding: 14px;
+  background-color: transparent;
+  color: #a73a64;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) > p > a:hover,
+.columns-media > div > div:not(.columns-media-img-col) > p > a:focus-visible {
+  background-color: transparent;
+  color: #a73a64;
+  text-decoration: none;
+}
+
+/* Trailing arrow icon appended via ::after using inline SVG (source arrow_right) */
+.columns-media > div > div:not(.columns-media-img-col) > p > a::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.163 31.041"><path d="M18.643,0l-1.92,1.921L28.964,14.162H0v2.716H28.965L16.723,29.12l1.921,1.92L34.164,15.52Z"/></svg>') no-repeat center / contain;
+}
+
+/* Desktop: side-by-side 50/50 columns, vertically centered */
 @media (width >= 900px) {
+  main .section > .columns-media-wrapper {
+    padding: 64px 32px;
+  }
+
   .columns-media > div {
     align-items: center;
-    flex-direction: unset;
+    flex-direction: row;
     gap: 24px;
   }
 
   .columns-media > div > div {
-    flex: 1;
+    flex: 1 1 50%;
     order: unset;
+    min-width: 0;
+  }
+
+  .columns-media > div + div {
+    margin-top: 64px;
   }
 }
