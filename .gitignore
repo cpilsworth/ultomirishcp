@@ -13,3 +13,10 @@ helix-importer-ui
 !AGENTS.md
 migration-work/navigation-validation/
 migration-work/footer-validation/
+
+.hlx/.da-token.json
+
+content
+
+# stardust scratch (screenshots, extraction dumps) — not for publishing
+stardust/.scratch/
