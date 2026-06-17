@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-06-17
+  variant_direction: "saturated, surface-led — full-bleed teal hero band with swoosh, denser compressed indication grid, more brand-color surfaces, navy bands"
+  imagery_mode: placeholder
+  synthesized_inputs:
+    - no wireframe — section order shaped from stardust/briefings/homepage.md
+    - no .impeccable.md — brand-profile.json voice rules used
+    - ALL # Copy synthesized (briefing had no # Copy):
+        hero.eyebrow, hero.headline, hero.subhead: synthesized
+        indications.card-copy (NMOSD/gMG/aHUS/PNH): synthesized
+        hub-paths.copy: synthesized
+        dosing-advantage.copy: synthesized (q8w maintenance claim is illustrative)
+        isi.boxed-warning: assembled from text observed on ultomirishcp.com, lightly trimmed
+        footer.copy: synthesized
+  note: ILLUSTRATIVE PROTOTYPE COPY ONLY. Not regulatory/medical-legal approved. Clinical claims, references (¹²), and safety text are placeholders for layout and must be replaced with PI-accurate, MLR-reviewed copy before any real use.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ULTOMIRIS® (ravulizumab-cwvz) | HCP — prototype B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --heading-font-family: 'Roboto', sans-serif;
+  --body-font-family: 'Roboto', sans-serif;
+
+  --heading-xxl: 52px;
+  --heading-xl: 38px;
+  --heading-lg: 27px;
+  --heading-md: 20px;
+  --body: 16px;
+  --body-sm: 13px;
+  --eyebrow: 13px;
+
+  --line-height-heading: 1.15;
+  --line-height-body: 1.55;
+
+  --complement: #008578;
+  --clinical: #003865;
+  --terminal: #F47E4D;
+  --indication: #A73A64;
+  --cascade: #B12E6A;
+  --cell: #7D2346;
+  --infusion: #014B44;
+  --plasma: #F2F9F8;
+  --surface: #F8F9FA;
+  --ink: #2B2B2B;
+  --white: #FFFFFF;
+  --swoosh: linear-gradient(90deg, #7D2346 0%, #B12E6A 38%, #F47E4D 92%);
+
+  --color-bg: #FFFFFF;
+  --color-fg: #2B2B2B;
+  --color-accent: #008578;
+
+  --spacing-xs: 6px;
+  --spacing-sm: 10px;
+  --spacing-md: 16px;
+  --spacing-lg: 28px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 76px;
+
+  --section-padding: 76px;
+  --max-width: 1200px;
+  --radius: 0px;
+  --radius-util: 8px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-fg);
+  font-family: var(--body-font-family); font-size: var(--body);
+  line-height: var(--line-height-body); -webkit-font-smoothing: antialiased;
+  padding-bottom: 60px;
+}
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+h1,h2,h3,h4 { font-family: var(--heading-font-family); line-height: var(--line-height-heading); margin: 0; color: var(--clinical); }
+.eyebrow { font-size: var(--eyebrow); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--complement); }
+em { font-style: italic; }
+sup { font-size: .62em; font-weight: 700; }
+a { color: var(--indication); }
+
+/* utility strip */
+.util { background: var(--clinical); color: rgba(255,255,255,.92); font-size: 12.5px; }
+.util .wrap { display: flex; justify-content: flex-end; gap: 22px; padding: 9px 32px; align-items: center; }
+.util a { color: rgba(255,255,255,.92); text-decoration: none; }
+.util .preg { margin-right: auto; color: rgba(255,255,255,.62); }
+
+/* primary nav */
+header.nav { background: var(--complement); position: sticky; top: 0; z-index: 40; }
+header.nav .wrap { display: flex; align-items: center; gap: 36px; height: 70px; }
+header.nav img { height: 48px; display: block; }
+header.nav nav { display: flex; gap: 28px; }
+header.nav nav a { color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; }
+header.nav .refer { margin-left: auto; color: var(--complement); background: #fff; font-weight: 700; text-decoration: none; font-size: 14px; padding: 10px 18px; border-radius: var(--radius-util); }
+
+/* hero — full-bleed teal band with swoosh */
+.hero { background: var(--complement); color: #fff; position: relative; overflow: hidden; }
+.hero::after { content:""; position:absolute; left:0; right:0; bottom:0; height:10px; background: var(--swoosh); }
+.hero .wrap { padding: 84px 32px 92px; position: relative; z-index: 2; max-width: 980px; }
+.hero .eyebrow { color: rgba(255,255,255,.85); margin-bottom: 18px; }
+.hero h1 { color: #fff; font-size: var(--heading-xxl); font-weight: 900; max-width: 18ch; letter-spacing: -.01em; }
+.hero .sub { font-size: 19px; color: rgba(255,255,255,.92); max-width: 58ch; margin-top: 18px; }
+.hero .cta-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.hero .cta-row a { text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: var(--radius-util); }
+.hero .cta-row a.solid { background: #fff; color: var(--complement); }
+.hero .cta-row a.ghost { border: 1.5px solid rgba(255,255,255,.7); color: #fff; }
+.molecular { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.blob { position: absolute; border-radius: 50%; filter: blur(8px); opacity: .3; }
+
+/* indications — dense compressed grid */
+.ind { background: var(--white); }
+.ind .wrap { padding: var(--spacing-2xl) 32px; }
+.ind .eyebrow { margin-bottom: 8px; }
+.ind h2 { font-size: var(--heading-lg); margin-bottom: var(--spacing-lg); }
+.ind-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border: 1px solid #e3e8ea; }
+.ind-card { padding: 22px 20px; border-right: 1px solid #e3e8ea; border-top: 4px solid var(--complement); }
+.ind-card:last-child { border-right: 0; }
+.ind-card .abbr { font-size: 24px; font-weight: 900; color: var(--complement); }
+.ind-card .full { font-size: 13px; font-weight: 700; color: var(--clinical); margin: 5px 0 9px; line-height: 1.3; }
+.ind-card p { font-size: 12.5px; color: #5a5756; margin: 0 0 14px; }
+.ind-card a { font-size: 13px; font-weight: 700; color: var(--indication); text-decoration: none; }
+
+/* hub paths — navy band */
+.paths { background: var(--clinical); color: #fff; }
+.paths .wrap { padding: var(--spacing-2xl) 32px; }
+.paths .eyebrow { color: var(--terminal); margin-bottom: 8px; }
+.paths h2 { color: #fff; font-size: var(--heading-lg); margin-bottom: 6px; }
+.paths .lede { color: rgba(255,255,255,.78); margin-bottom: var(--spacing-lg); max-width: 60ch; }
+.path-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.path { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); padding: 26px 24px; }
+.path .ico { width: 34px; height: 34px; border-radius: 50%; background: var(--terminal); color: var(--clinical); font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.path h3 { color: #fff; font-size: var(--heading-md); margin-bottom: 8px; }
+.path p { color: rgba(255,255,255,.78); font-size: var(--body-sm); margin: 0 0 18px; }
+.path a { color: #fff; font-weight: 700; text-decoration: none; font-size: 14px; border-bottom: 2px solid var(--terminal); padding-bottom: 2px; }
+
+/* dosing advantage */
+.dose { background: var(--plasma); }
+.dose .wrap { padding: var(--spacing-2xl) 32px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.dose .eyebrow { margin-bottom: 10px; }
+.dose h2 { font-size: var(--heading-xl); color: var(--clinical); margin-bottom: 14px; }
+.dose p { color: var(--ink); max-width: 48ch; }
+.dose .figure { background: var(--complement); color: #fff; padding: 44px 40px; position: relative; overflow: hidden; }
+.dose .figure::after { content:""; position:absolute; left:0; right:0; bottom:0; height:8px; background: var(--swoosh); }
+.dose .figure .big { font-size: 70px; font-weight: 900; line-height: 1; }
+.dose .figure .cap { font-size: 15px; font-weight: 700; margin-top: 10px; }
+.dose .figure .note { font-size: 13px; color: rgba(255,255,255,.8); margin-top: 14px; }
+
+/* ISI block */
+.isi-block { background: var(--white); border-top: 3px solid var(--complement); }
+.isi-block .wrap { padding: var(--spacing-xl) 32px; }
+.isi-block .eyebrow { color: var(--complement); }
+.warning-box { border: 2px solid var(--clinical); border-left: 8px solid var(--clinical); padding: 26px 30px; margin-top: 20px; background: var(--surface); }
+.warning-box .wt { font-size: 16px; font-weight: 900; color: var(--clinical); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 12px; }
+.warning-box p { font-size: 14px; color: var(--ink); margin: 0 0 12px; line-height: 1.55; }
+.warning-box ul { font-size: 14px; color: var(--ink); margin: 0; padding-left: 20px; }
+.warning-box ul li { margin-bottom: 8px; }
+
+/* footer */
+footer.bf { background: var(--clinical); color: rgba(255,255,255,.85); }
+footer.bf .wrap { padding: 52px 32px 38px; }
+footer.bf .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.18); }
+footer.bf img { height: 44px; margin-bottom: 14px; }
+footer.bf h4 { color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 13px; }
+footer.bf a { display: block; color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; margin-bottom: 9px; }
+footer.bf .legal { font-size: 12px; color: rgba(255,255,255,.55); padding-top: 22px; line-height: 1.6; }
+footer.bf .refs { font-size: 11.5px; color: rgba(255,255,255,.5); margin-top: 10px; }
+
+/* placeholder */
+.ph { background: repeating-linear-gradient(45deg, rgba(0,133,120,.05) 0 12px, rgba(0,133,120,.1) 12px 24px), var(--plasma);
+  border: 1px dashed #b9d6d1; display:flex; align-items:center; justify-content:center; color: var(--complement); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+
+/* sticky ISI bar */
+.isi-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--clinical); color: #fff; z-index: 60; box-shadow: 0 -2px 14px rgba(0,0,0,.2); }
+.isi-bar::before { content:""; display:block; height:5px; background: var(--swoosh); }
+.isi-bar .wrap { display: flex; align-items: center; justify-content: space-between; padding: 13px 32px; }
+.isi-bar .t { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <span class="preg">ULTOMIRIS Pregnancy Registry Study is now enrolling.</span>
+    <a href="#">Select an Indication ▾</a>
+    <a href="#">Full Prescribing &amp; Patient Information</a>
+    <a href="#">Download Start Form</a>
+    <a href="#">REMS</a>
+    <a href="#">Visit the Patient Site ↗</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <img src="../assets/logo.svg" alt="ULTOMIRIS (ravulizumab-cwvz)">
+    <nav>
+      <a href="#indications">About ULTOMIRIS</a>
+      <a href="#dosing">Dosing and Administration</a>
+      <a href="#resources">Resources and Support</a>
+    </nav>
+    <a class="refer" href="#">Refer a Patient ›</a>
+  </div>
+</header>
+
+<section class="hero" data-section="hero" data-intent="orient new-to-brand HCPs" data-layout="full-bleed-band">
+  <div class="molecular" aria-hidden="true">
+    <span class="blob" style="width:240px;height:240px;background:#7D2346;right:-50px;top:10px"></span>
+    <span class="blob" style="width:160px;height:160px;background:#F47E4D;right:180px;bottom:30px"></span>
+    <span class="blob" style="width:120px;height:120px;background:#B12E6A;right:340px;top:40px"></span>
+  </div>
+  <div class="wrap">
+    <div class="eyebrow">For US Healthcare Professionals</div>
+    <h1>The first and only long-acting terminal complement inhibitor<sup>1</sup></h1>
+    <p class="sub">ULTOMIRIS<sup>®</sup> (ravulizumab-cwvz) is a long-acting C5 inhibitor FDA approved across four complement-mediated diseases.</p>
+    <div class="cta-row">
+      <a class="solid" href="#indications">Explore the indications</a>
+      <a class="ghost" href="#dosing">See dosing &amp; administration</a>
+      <a class="ghost" href="#isi">Review safety &amp; REMS</a>
+    </div>
+  </div>
+</section>
+
+<section class="ind" id="indications" data-section="indications" data-intent="relevance to patient population" data-layout="four-col-dense">
+  <div class="wrap">
+    <div class="eyebrow">FDA approved for 4 indications</div>
+    <h2>One C5 inhibitor across four complement-mediated diseases</h2>
+    <div class="ind-grid">
+      <div class="ind-card">
+        <div class="abbr">NMOSD</div>
+        <div class="full">Neuromyelitis Optica Spectrum Disorder</div>
+        <p>In adults who are anti-AQP4 antibody positive.</p>
+        <a href="#">Explore NMOSD ›</a>
+      </div>
+      <div class="ind-card">
+        <div class="abbr">gMG</div>
+        <div class="full">Generalized Myasthenia Gravis</div>
+        <p>In adults who are anti-AChR antibody positive.</p>
+        <a href="#">Explore gMG ›</a>
+      </div>
+      <div class="ind-card">
+        <div class="abbr">aHUS</div>
+        <div class="full">Atypical Hemolytic Uremic Syndrome</div>
+        <p>To inhibit complement-mediated thrombotic microangiopathy.</p>
+        <a href="#">Explore aHUS ›</a>
+      </div>
+      <div class="ind-card">
+        <div class="abbr">PNH</div>
+        <div class="full">Paroxysmal Nocturnal Hemoglobinuria</div>
+        <p>In adult and pediatric patients (1 month and older).</p>
+        <a href="#">Explore PNH ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paths" data-section="hub" data-intent="balanced routing" data-layout="three-col">
+  <div class="wrap">
+    <div class="eyebrow">Where would you like to start?</div>
+    <h2>Three ways into ULTOMIRIS</h2>
+    <p class="lede">No single path leads — choose the one that matches your question today.</p>
+    <div class="path-grid">
+      <div class="path">
+        <div class="ico">1</div>
+        <h3>Explore the indications</h3>
+        <p>See how ULTOMIRIS is studied and approved across NMOSD, gMG, aHUS, and PNH.</p>
+        <a href="#indications">View indications ›</a>
+      </div>
+      <div class="path">
+        <div class="ico">2</div>
+        <h3>See dosing &amp; administration</h3>
+        <p>Weight-based loading and long-acting maintenance dosing, plus infusion guidance.</p>
+        <a href="#dosing">View dosing ›</a>
+      </div>
+      <div class="path">
+        <div class="ico">3</div>
+        <h3>Review safety &amp; REMS</h3>
+        <p>Boxed Warning, meningococcal risk and vaccination, and the restricted-access REMS program.</p>
+        <a href="#isi">View safety ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dose" id="dosing" data-section="dosing-advantage" data-intent="long-acting differentiation" data-layout="split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Long-acting by design</div>
+      <h2>Maintenance dosing every 8 weeks<sup>2</sup></h2>
+      <p>After a weight-based loading dose, adult patients receive ULTOMIRIS maintenance infusions every 8 weeks — fewer scheduled infusions than shorter-acting C5 inhibitors. Review full dosing and administration for each indication and patient weight.</p>
+      <p style="margin-top:22px"><a href="#" style="font-weight:700;text-decoration:none;border-bottom:2px solid var(--indication);padding-bottom:2px;">See dosing &amp; administration ›</a></p>
+    </div>
+    <div class="figure">
+      <div class="big">q8w</div>
+      <div class="cap">Adult maintenance dosing interval</div>
+      <div class="note">Following the loading dose. Pediatric and indication-specific schedules vary — see full Prescribing Information.</div>
+    </div>
+  </div>
+</section>
+
+<section class="isi-block" id="isi" data-section="isi" data-intent="disclosure-first safety" data-layout="boxed">
+  <div class="wrap">
+    <div class="eyebrow">Important Safety Information</div>
+    <div class="warning-box">
+      <div class="wt">Warning: Serious Meningococcal Infections</div>
+      <p>ULTOMIRIS, a complement inhibitor, increases the risk of serious infections caused by <em>Neisseria meningitidis</em>. Life-threatening and fatal meningococcal infections have occurred in patients treated with complement inhibitors. These infections may become rapidly life-threatening or fatal if not recognized and treated early.</p>
+      <ul>
+        <li>Complete or update meningococcal vaccination at least 2 weeks before the first dose of ULTOMIRIS, according to current ACIP recommendations.</li>
+        <li>If urgent ULTOMIRIS therapy is indicated in an unvaccinated patient, administer vaccination as soon as possible and provide antibacterial drug prophylaxis.</li>
+        <li>Because of the risk of serious meningococcal infections, ULTOMIRIS is available only through a restricted program under a REMS.</li>
+      </ul>
+      <p style="margin-top:14px"><a href="#" style="font-weight:700">Read the full Important Safety Information &amp; Boxed Warning ›</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="bf" id="resources">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="../assets/logo.svg" alt="ULTOMIRIS">
+        <p style="font-size:13px;max-width:38ch">ULTOMIRIS<sup>®</sup> (ravulizumab-cwvz) — official site for US healthcare professionals.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#indications">Indications</a>
+        <a href="#dosing">Dosing and Administration</a>
+        <a href="#isi">Safety and REMS</a>
+        <a href="#">Resources and Support</a>
+      </div>
+      <div>
+        <h4>Act</h4>
+        <a href="#">Refer a Patient</a>
+        <a href="#">Download Start Form</a>
+        <a href="#">Full Prescribing Information</a>
+        <a href="#">Visit the Patient Site ↗</a>
+      </div>
+    </div>
+    <div class="legal">
+      © 2026 [Marketing-company placeholder]. All rights reserved. ULTOMIRIS is a registered trademark. This is an illustrative prototype; copy and references are placeholders and not medically or legally reviewed.
+      <div class="refs">References: 1. [Placeholder citation]. 2. [Placeholder citation — dosing interval].</div>
+    </div>
+  </div>
+</footer>
+
+<div class="isi-bar">
+  <div class="wrap">
+    <span class="t">Important Safety Information including Boxed Warning</span>
+    <span class="x">⌃ ⌄</span>
+  </div>
+</div>
+
+</body>
+</html>

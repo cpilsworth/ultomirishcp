@@ -1,0 +1,381 @@
+{
+  "_provenance": {
+    "generated_by": "brand",
+    "date": "2026-06-17",
+    "source": "https://ultomirishcp.com/",
+    "extraction_method": "Chrome DevTools (Chromium, 1440x900, real browser): screenshots + computed-style evaluation, shadow-DOM walk for nav/CTAs inside <awtcustom-header>, logo SVG downloaded and parsed for gradient stops",
+    "synthesized_inputs": [
+      "color role names (Complement, Clinical, Terminal, Cascade, Cell, Indication, Infusion, Plasma) — brand-native names derived from the immunology/complement-cascade subject matter, not labeled as such on the source",
+      "h1-h6 heading extraction returned empty (headings are non-semantic or inside custom elements); heading typography derived from the styled hero element (Roboto 700, 32px/40px)",
+      "hero orange #F47E4D sourced from the logo swoosh gradient (authoritative brand orange), not pixel-sampled from the hero banner image",
+      "voice character/traits/antiTraits and tone goals — inferred from rendered hero copy + Important Safety Information body, not read from a published voice guide",
+      "photography/imagery direction — inferred from the home hero illustration style, not a documented photo guideline",
+      "personas — composed from the HCP (healthcare provider) audience the site clearly targets; not read from the page",
+      "componentStyle.buttons — brand uses berry text-link CTAs (extracted); filled-button radii on the page belonged to the cookie-consent widget and were excluded"
+    ],
+    "screenshots": [
+      "stardust/.scratch/hero.png",
+      "stardust/.scratch/fullpage.png"
+    ],
+    "note": "Regulated US pharma HCP (healthcare professional) site for ULTOMIRIS (ravulizumab-cwvz), AstraZeneca/Alexion. Content is dominated by Important Safety Information and a Boxed Warning; the design is clinical and disclosure-first."
+  },
+
+  "_divergence": {
+    "toolkit_version": "v0.6.0",
+    "seed": {
+      "decade": null,
+      "craft": null,
+      "register": null,
+      "ground": "stark-white",
+      "picked_by": "not-applicable",
+      "overrides": [],
+      "hash_input": null
+    },
+    "font_deck": null,
+    "palette_source": {
+      "method": "extracted-from-source",
+      "library_version": null,
+      "library_source": null,
+      "description_used": null,
+      "classification": {
+        "energy": null,
+        "contrast": null,
+        "saturation_level": null,
+        "hue_bias": "teal",
+        "ground_family": "stark-white"
+      },
+      "candidates_shown": [],
+      "recommended_index": null,
+      "picked_index": null,
+      "picked_palette_name": null,
+      "picked_palette_source": "https://ultomirishcp.com/ (extracted computed styles + logo SVG gradient stops)"
+    },
+    "anti_toolbox_count": 0,
+    "anti_toolbox_hits": [],
+    "divergence_justifications": [],
+    "off_toolbox_moves": [
+      "berry-to-orange diagonal swoosh gradient as the signature mark (real brand motif, not an assistant aurora-haze default)",
+      "stark-white clinical ground (extracted #ffffff body), not a cream rebrand"
+    ],
+    "references_used": [
+      {
+        "source": "https://ultomirishcp.com/",
+        "kind": "marketing-site",
+        "trends_extracted": [],
+        "trend_tags": {}
+      }
+    ],
+    "divergence_warning": false
+  },
+
+  "name": "ULTOMIRIS",
+  "philosophy": "The first and only long-acting terminal complement (C5) inhibitor. ULTOMIRIS speaks to healthcare professionals with clinical authority and disclosure-first transparency — every claim is evidence-referenced and shadowed by its safety information.",
+
+  "logo": {
+    "path": "stardust/assets/logo.svg",
+    "format": "svg",
+    "source": "img-tag",
+    "variants": [],
+    "clearSpace": "Maintain clear space around the wordmark equal to the height of the swoosh arc; never crowd with body text or safety copy.",
+    "donts": [
+      "Do not recolor the swoosh gradient or flatten it to a single hue",
+      "Do not place the white wordmark on a light ground without the colored swoosh providing contrast",
+      "Do not stretch, rotate, or separate the swoosh from the wordmark"
+    ]
+  },
+
+  "colors": {
+    "primary": [
+      {
+        "name": "Complement Teal",
+        "hex": "#008578",
+        "pantone": null,
+        "role": "Complement",
+        "use": "header / global navigation bar, sticky Important Safety Information bar, primary brand surface"
+      },
+      {
+        "name": "Clinical Navy",
+        "hex": "#003865",
+        "pantone": null,
+        "role": "Clinical",
+        "use": "footer, headings, utility chrome, deep contrast surface (AstraZeneca lineage)"
+      },
+      {
+        "name": "Terminal Orange",
+        "hex": "#F47E4D",
+        "pantone": null,
+        "role": "Terminal",
+        "use": "hero headline accent, warm tip of the signature swoosh, emphasis"
+      },
+      {
+        "name": "Indication Rose",
+        "hex": "#A73A64",
+        "pantone": null,
+        "role": "Indication",
+        "use": "text-link CTAs (Refer a Patient, Prescribing Information, REMS), inline links"
+      }
+    ],
+    "secondary": [
+      {
+        "name": "Cascade Magenta",
+        "hex": "#B12E6A",
+        "role": "Cascade"
+      },
+      {
+        "name": "Cell Berry",
+        "hex": "#7D2346",
+        "role": "Cell"
+      },
+      {
+        "name": "Infusion Green",
+        "hex": "#014B44",
+        "role": "Infusion"
+      }
+    ],
+    "web": [
+      {
+        "name": "Plasma Tint",
+        "hex": "#F2F9F8",
+        "role": "Plasma"
+      },
+      {
+        "name": "Slate Surface",
+        "hex": "#F8F9FA",
+        "role": "Surface"
+      },
+      {
+        "name": "Reading Ink",
+        "hex": "#2B2B2B",
+        "role": "Reading"
+      },
+      {
+        "name": "Mark White",
+        "hex": "#FFFFFF",
+        "role": "Page ground; wordmark fill on the teal/navy bar"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Complement Swoosh",
+        "stops": ["#7D2346", "#B12E6A", "#F47E4D"],
+        "usage": "The signature mark: a left-to-right arc sweeping from deep cell berry through cascade magenta to terminal orange, arcing over the white ULTOMIRIS wordmark. Reserve for the logo and rare hero accents — never as a body background."
+      }
+    ]
+  },
+
+  "componentStyle": {
+    "borderRadius": {
+      "default": "0px",
+      "usage": "Brand CTAs are flat berry text-links, not pill buttons. Square corners read clinical and documentary. (The 8px-radius filled buttons on the live site belong to the cookie-consent widget, not the brand system.)"
+    },
+    "maxWidth": "1280px",
+    "pagePadding": "32px",
+    "navbarHeight": "64px",
+    "buttons": {
+      "patterns": [
+        {
+          "name": "Text-link CTA (rose)",
+          "style": "no fill, no radius; Indication Rose #A73A64 text, Roboto 600-700, 16-18px; underline or arrow affordance on hover",
+          "example": "Refer a Patient"
+        },
+        {
+          "name": "Navigation link (ink)",
+          "style": "no fill; dark ink #363532 text, Roboto 400, on the teal global bar reverses to white",
+          "example": "Dosing and Administration"
+        }
+      ],
+      "dualCTA": null
+    }
+  },
+
+  "motifs": [
+    {
+      "name": "Complement Swoosh",
+      "description": "A diagonal arc gradient sweeping berry -> magenta -> orange, arcing up over the wordmark. The single most recognizable brand gesture.",
+      "usage": "Logo lockup and sparing hero accents. Do not repeat as a pattern or use as a section background."
+    },
+    {
+      "name": "Watercolor molecular field",
+      "description": "Soft, semi-transparent illustrations of complement proteins and blood cells scattered across the hero — clusters in berry-pink and teal-green on white.",
+      "usage": "Hero and section backgrounds at low opacity behind headlines; keeps the science present without competing with copy."
+    },
+    {
+      "name": "Sticky ISI bar",
+      "description": "A persistent teal Important Safety Information bar carrying the Boxed Warning, expandable from the foot of the viewport.",
+      "usage": "Required regulatory disclosure pattern — always visible on HCP pages. Teal #008578 ground, white text, chevron expand control."
+    },
+    {
+      "name": "Plasma indication cards",
+      "description": "Pale-teal (#F2F9F8) tiles listing the four approved indications (NMOSD, gMG, aHUS, PNH).",
+      "usage": "Indication overview rows; flat, quiet, square-cornered."
+    }
+  ],
+
+  "typography": {
+    "heading": {
+      "family": "Roboto",
+      "weights": ["700", "900"],
+      "lineHeight": 1.25,
+      "letterSpacing": "normal",
+      "usage": "Hero and section headlines, Roboto Bold (700) at ~32px/40px; Boxed Warning emphasis runs Roboto Black (900)."
+    },
+    "subheading": {
+      "family": "Roboto",
+      "weight": "700",
+      "usage": "Indication labels and safety-section headers, often uppercase."
+    },
+    "body": {
+      "family": "Roboto",
+      "weight": "400",
+      "opacity": null,
+      "usage": "Reading copy and safety information at 16px/24px, Reading Ink #2B2B2B."
+    },
+    "accent": {
+      "family": "Roboto",
+      "weight": "400",
+      "usage": "Italic for scientific Latin nomenclature (e.g. Neisseria meningitidis) and regulatory citations such as see Warnings and Precautions (5.1)."
+    },
+    "eyebrow": {
+      "family": "Roboto",
+      "weight": "700",
+      "transform": "uppercase",
+      "usage": "Section eyebrows like FDA APPROVED FOR 4 INDICATIONS and IMPORTANT SAFETY INFORMATION."
+    },
+    "button": {
+      "family": "Roboto",
+      "weight": "600",
+      "usage": "Text-link CTAs in Indication Rose."
+    },
+    "rules": [
+      "Scientific Latin organism names are always italicized",
+      "Regulatory section references appear in italics with section numbers, e.g. (5.1)",
+      "Claims carry superscript reference markers (¹)",
+      "Headlines stay sentence-case or title-case; eyebrows are uppercase"
+    ]
+  },
+
+  "photography": {
+    "style": "Abstract scientific illustration over clean white. Soft watercolor renderings of complement proteins and blood cells in berry-pink and teal-green; minimal use of human photography on the HCP home experience.",
+    "rules": [
+      "Keep backgrounds white and uncluttered so dense clinical copy stays legible",
+      "Use molecular/cellular imagery to evoke mechanism of action, not literal product shots",
+      "Any human imagery (deeper pages) should read as professional and clinical, never lifestyle-promotional"
+    ],
+    "donts": [
+      "No stock-photo emotional lifestyle imagery on the HCP hero",
+      "No imagery that crowds or obscures required safety information",
+      "No saturated photographic backgrounds behind body copy"
+    ],
+    "social": null
+  },
+
+  "voice": {
+    "character": "Clinical, authoritative, and disclosure-first. Speaks peer-to-peer to physicians with evidence and precision, never hype.",
+    "traits": ["Authoritative", "Evidence-based", "Precise", "Transparent", "Clinical"],
+    "antiTraits": ["Promotional", "Casual", "Exclamatory", "Vague", "Emotional"],
+    "examples": {
+      "do": [
+        {
+          "text": "Offer your patients the first and only long-acting terminal complement inhibitor¹",
+          "context": "Physician-directed (“your patients”), precise claim, reference marker carries the evidence."
+        },
+        {
+          "text": "FDA APPROVED FOR 4 INDICATIONS: NMOSD, gMG, aHUS, PNH",
+          "context": "States regulatory status plainly with the exact indication abbreviations clinicians use."
+        },
+        {
+          "text": "ULTOMIRIS, a complement inhibitor, increases the risk of serious infections caused by Neisseria meningitidis [see Warnings and Precautions (5.1)]",
+          "context": "Risk stated up front with italic organism name and a cited section — disclosure-first."
+        }
+      ],
+      "dont": [
+        {
+          "text": "ULTOMIRIS is the amazing breakthrough that changes everything for your patients!",
+          "context": "Hype, exclamation, and an unreferenced superlative — fails regulatory and brand standards."
+        },
+        {
+          "text": "A simple, worry-free treatment your patients will love.",
+          "context": "Minimizes risk and makes an emotional promise; ignores the Boxed Warning that must accompany claims."
+        }
+      ]
+    },
+    "rules": [
+      "Every efficacy claim is paired with its reference and accompanied by required safety information",
+      "Never minimize or omit the Boxed Warning on serious meningococcal infections",
+      "No exclamation marks; no unsubstantiated superlatives",
+      "Italicize scientific organism names and cite regulatory sections verbatim"
+    ]
+  },
+
+  "tone": {
+    "description": "Tone is consistently measured and clinical. It educates first and persuades only through evidence; it never loosens into casual or promotional register, because every page carries regulatory weight.",
+    "writingGoals": [
+      {
+        "goal": "To Educate",
+        "description": "Explain mechanism, dosing, and indications with clinical accuracy a prescriber can act on."
+      },
+      {
+        "goal": "To Reassure (with evidence)",
+        "description": "Build prescriber confidence through referenced data and transparent risk disclosure, not emotional appeal."
+      },
+      {
+        "goal": "To Disclose",
+        "description": "Surface safety information — Boxed Warning, contraindications, REMS — prominently and unambiguously."
+      }
+    ],
+    "cleverVsClear": {
+      "clever": "Almost never. Restraint is the brand's sophistication; wit has no place beside a Boxed Warning.",
+      "clear": "Always. Clarity and accuracy override every other consideration in regulated HCP copy."
+    }
+  },
+
+  "contentPillars": [
+    {
+      "name": "Indications",
+      "description": "The four FDA-approved uses — NMOSD, gMG, aHUS, and PNH — and the patients each serves."
+    },
+    {
+      "name": "Dosing and Administration",
+      "description": "Weight-based dosing, infusion schedules, and long-acting interval guidance for the care team."
+    },
+    {
+      "name": "Safety and REMS",
+      "description": "Boxed Warning, meningococcal risk, vaccination/ACIP guidance, and the restricted-access REMS program."
+    },
+    {
+      "name": "Support and Resources",
+      "description": "Start forms, patient referral, prescribing information, and HCP support pathways."
+    }
+  ],
+
+  "personas": [
+    {
+      "name": "The Prescribing Specialist",
+      "description": "A neurologist, hematologist, or nephrologist evaluating ULTOMIRIS for a specific rare-disease indication.",
+      "values": ["Clinical evidence", "Patient safety", "Dosing convenience", "Regulatory clarity"],
+      "motto": "Show me the data and the risk, then the schedule.",
+      "stats": []
+    },
+    {
+      "name": "The Care-Team Coordinator",
+      "description": "A nurse or pharmacist managing infusion logistics, REMS enrollment, and vaccination requirements.",
+      "values": ["Process clarity", "Compliance", "Reliable resources"],
+      "motto": "Tell me exactly what has to happen before the first infusion.",
+      "stats": []
+    }
+  ],
+
+  "spacing": {
+    "scale": [
+      { "name": "XS", "value": "8px" },
+      { "name": "S", "value": "16px" },
+      { "name": "M", "value": "24px" },
+      { "name": "L", "value": "32px" },
+      { "name": "XL", "value": "64px" }
+    ],
+    "borderRadius": [
+      { "name": "Flat", "value": "0px" },
+      { "name": "Utility", "value": "8px" }
+    ]
+  }
+}

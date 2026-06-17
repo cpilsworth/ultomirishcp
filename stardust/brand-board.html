@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: brand
+  date: 2026-06-17
+  source: https://ultomirishcp.com/
+  synthesized_inputs:
+    - color role names (Complement, Clinical, Terminal, Cascade, Cell, Indication, Infusion, Plasma) — brand-native, derived from immunology subject matter
+    - heading typography derived from styled hero element (h1-h6 extraction returned empty)
+    - hero orange sourced from logo swoosh gradient, not pixel-sampled
+    - voice/tone/personas/photography inferred from rendered copy + ISI, not a published guide
+  note: regulated pharma HCP brand board. Edit brand-profile.json and re-run /stardust:brand to refine.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ULTOMIRIS — Brand Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --complement: #008578;
+    --clinical: #003865;
+    --terminal: #F47E4D;
+    --indication: #A73A64;
+    --cascade: #B12E6A;
+    --cell: #7D2346;
+    --infusion: #014B44;
+    --plasma: #F2F9F8;
+    --surface: #F8F9FA;
+    --ink: #2B2B2B;
+    --white: #FFFFFF;
+    --swoosh: linear-gradient(90deg, #7D2346 0%, #B12E6A 35%, #B12E6A 50%, #F47E4D 90%);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--indication); }
+
+  /* sticky nav */
+  nav.boardnav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--complement);
+    display: flex; flex-wrap: wrap; gap: 4px 22px;
+    padding: 14px 32px;
+    align-items: center;
+  }
+  nav.boardnav strong { color: var(--white); font-weight: 900; letter-spacing: .02em; margin-right: 12px; }
+  nav.boardnav a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+  nav.boardnav a:hover { color: var(--white); }
+
+  section { max-width: 1280px; margin: 0 auto; padding: 64px 32px; border-bottom: 1px solid #e8ecee; }
+  h2.sec { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--complement); margin: 0 0 28px; }
+
+  /* masthead */
+  .masthead { background: var(--clinical); color: var(--white); max-width: none; border: 0; }
+  .masthead .inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .masthead .logo-plate {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--white); border-radius: 10px; padding: 22px 30px; margin-bottom: 30px;
+  }
+  .masthead .logo-plate img { display: block; height: 64px; }
+  .masthead h1 { font-size: 46px; font-weight: 900; margin: 0 0 10px; letter-spacing: -.01em; }
+  .masthead .swooshbar { height: 8px; width: 220px; border-radius: 4px; background: var(--swoosh); margin: 18px 0 26px; }
+  .masthead p { font-size: 19px; max-width: 760px; color: rgba(255,255,255,.86); margin: 0; }
+  .masthead .tag { font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: var(--terminal); font-weight: 700; }
+
+  /* color */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); gap: 18px; }
+  .sw { border: 1px solid #e8ecee; border-radius: 10px; overflow: hidden; }
+  .sw .chip { height: 104px; }
+  .sw .meta { padding: 12px 14px; }
+  .sw .meta .nm { font-weight: 700; font-size: 15px; }
+  .sw .meta .hex { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #6a6f73; text-transform: uppercase; }
+  .sw .meta .role { display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--complement); }
+  .sw .meta .use { font-size: 12.5px; color: #555; margin-top: 6px; line-height: 1.45; }
+  .gradient-demo { height: 88px; border-radius: 10px; background: var(--swoosh); margin-top: 8px; }
+  .grad-label { display:flex; justify-content:space-between; font-family: ui-monospace,Menlo,monospace; font-size:11px; color:#6a6f73; margin-top:8px; }
+
+  /* type */
+  .type-row { padding: 22px 0; border-top: 1px solid #eef1f2; }
+  .type-row:first-of-type { border-top: 0; }
+  .type-row .label { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #6a6f73; margin-bottom: 10px; }
+  .type-row .label b { color: var(--ink); }
+  .spec-head { font-size: 34px; font-weight: 700; line-height: 1.25; }
+  .spec-eyebrow { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--complement); }
+  .spec-body { font-size: 16px; line-height: 1.5; max-width: 720px; }
+  .spec-accent { font-style: italic; }
+  .spec-link { color: var(--indication); font-weight: 600; }
+
+  /* voice */
+  .voice-char { font-size: 20px; max-width: 760px; margin: 0 0 26px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+  .tag-this { background: var(--plasma); color: var(--infusion); border: 1px solid #cfe6e2; padding: 7px 14px; border-radius: 100px; font-size: 13px; font-weight: 600; }
+  .tag-not { background: #fbeef3; color: var(--cell); border: 1px solid #f0d3df; padding: 7px 14px; border-radius: 100px; font-size: 13px; font-weight: 600; text-decoration: line-through; }
+  .ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .ex { border-radius: 10px; padding: 20px 22px; }
+  .ex.do { background: var(--plasma); border-left: 4px solid var(--complement); }
+  .ex.dont { background: #fbeef3; border-left: 4px solid var(--indication); }
+  .ex .k { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+  .ex.do .k { color: var(--complement); }
+  .ex.dont .k { color: var(--indication); }
+  .ex .quote { font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+  .ex .why { font-size: 13px; color: #555; }
+  ul.rules { padding-left: 20px; margin-top: 24px; }
+  ul.rules li { margin-bottom: 8px; font-size: 15px; }
+
+  /* tone */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px; }
+  .card { border: 1px solid #e8ecee; border-radius: 10px; padding: 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 17px; color: var(--clinical); }
+  .card p { margin: 0; font-size: 14px; color: #555; }
+
+  /* motifs */
+  .motif { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; padding: 22px 0; border-top: 1px solid #eef1f2; }
+  .motif:first-of-type { border-top: 0; }
+  .motif .demo { height: 130px; border-radius: 10px; overflow: hidden; position: relative; background: var(--white); border: 1px solid #e8ecee; }
+  .demo-swoosh { background: var(--swoosh); }
+  .demo-isi { background: var(--complement); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; text-align:center; padding: 0 14px; text-transform: uppercase; letter-spacing: .04em; }
+  .demo-card { background: var(--plasma); display:flex; align-items:center; justify-content:center; color: var(--clinical); font-weight:700; font-size:13px; }
+  .demo-mol { position: relative; }
+  .demo-mol .blob { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .55; }
+  .motif .txt h3 { margin: 0 0 6px; font-size: 18px; }
+  .motif .txt p { margin: 0; font-size: 14px; color: #555; }
+  .motif .txt .usage { margin-top: 8px; font-size: 13px; color: #777; }
+
+  /* components */
+  .btnrow { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; margin-bottom: 18px; }
+  .lnk-cta { color: var(--indication); font-weight: 700; font-size: 18px; text-decoration: none; border-bottom: 2px solid var(--indication); padding-bottom: 2px; }
+  .nav-cta { color: #363532; font-weight: 400; font-size: 16px; text-decoration: none; }
+  .nav-cta:hover { color: var(--complement); }
+  .barnav { background: var(--complement); color: #fff; padding: 12px 20px; border-radius: 6px; display: inline-flex; gap: 22px; }
+  .barnav a { color: rgba(255,255,255,.9); text-decoration: none; font-size: 14px; }
+
+  /* personas + pillars */
+  .persona { border: 1px solid #e8ecee; border-radius: 10px; padding: 24px; }
+  .persona h3 { margin: 0 0 4px; color: var(--clinical); font-size: 18px; }
+  .persona .motto { font-style: italic; color: var(--indication); margin: 12px 0; }
+  .persona .vals { display: flex; flex-wrap: wrap; gap: 8px; }
+  .persona .vals span { background: var(--surface); border: 1px solid #e8ecee; padding: 4px 10px; border-radius: 100px; font-size: 12px; }
+
+  /* logo */
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .logo-cell { border: 1px solid #e8ecee; border-radius: 10px; min-height: 150px; display: flex; align-items: center; justify-content: center; }
+  .logo-cell.dark { background: var(--clinical); }
+  .logo-cell.teal { background: var(--complement); }
+  .logo-cell img { height: 62px; }
+  .donts { margin-top: 22px; }
+  .donts li { color: var(--cell); font-size: 14px; margin-bottom: 6px; }
+
+  /* spacing */
+  .spaces { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+  .space-blk { text-align: center; font-size: 12px; color: #6a6f73; }
+  .space-blk .bar { background: var(--complement); border-radius: 3px; margin-bottom: 6px; }
+  footer.bf { background: var(--surface); text-align: center; padding: 40px; font-size: 13px; color: #888; }
+  @media (max-width: 760px) {
+    .ex-grid, .logo-grid { grid-template-columns: 1fr; }
+    .motif { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="boardnav">
+  <strong>ULTOMIRIS</strong>
+  <a href="#color">Color</a>
+  <a href="#type">Type</a>
+  <a href="#voice">Voice</a>
+  <a href="#tone">Tone</a>
+  <a href="#motifs">Motifs</a>
+  <a href="#components">Components</a>
+  <a href="#imagery">Imagery</a>
+  <a href="#pillars">Pillars</a>
+  <a href="#personas">Personas</a>
+  <a href="#logo">Logo</a>
+  <a href="#spacing">Spacing</a>
+</nav>
+
+<header class="masthead" style="padding:64px 0;">
+  <div class="inner">
+    <div class="logo-plate"><img src="assets/logo.svg" alt="ULTOMIRIS logo"></div>
+    <div class="tag">First &amp; only long-acting terminal complement inhibitor</div>
+    <h1>ULTOMIRIS</h1>
+    <div class="swooshbar"></div>
+    <p>The first and only long-acting terminal complement (C5) inhibitor. ULTOMIRIS speaks to healthcare professionals with clinical authority and disclosure-first transparency — every claim is evidence-referenced and shadowed by its safety information.</p>
+  </div>
+</header>
+
+<!-- COLOR -->
+<section id="color">
+  <h2 class="sec">Color Palette</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#008578"></div><div class="meta"><div class="nm">Complement Teal</div><div class="hex">#008578</div><span class="role">Complement</span><div class="use">Global nav bar, sticky ISI bar, primary surface</div></div></div>
+    <div class="sw"><div class="chip" style="background:#003865"></div><div class="meta"><div class="nm">Clinical Navy</div><div class="hex">#003865</div><span class="role">Clinical</span><div class="use">Footer, headings, utility chrome</div></div></div>
+    <div class="sw"><div class="chip" style="background:#F47E4D"></div><div class="meta"><div class="nm">Terminal Orange</div><div class="hex">#F47E4D</div><span class="role">Terminal</span><div class="use">Hero accent, warm tip of the swoosh</div></div></div>
+    <div class="sw"><div class="chip" style="background:#A73A64"></div><div class="meta"><div class="nm">Indication Rose</div><div class="hex">#A73A64</div><span class="role">Indication</span><div class="use">Text-link CTAs &amp; inline links</div></div></div>
+    <div class="sw"><div class="chip" style="background:#B12E6A"></div><div class="meta"><div class="nm">Cascade Magenta</div><div class="hex">#B12E6A</div><span class="role">Cascade</span><div class="use">Swoosh mid-stop, imagery</div></div></div>
+    <div class="sw"><div class="chip" style="background:#7D2346"></div><div class="meta"><div class="nm">Cell Berry</div><div class="hex">#7D2346</div><span class="role">Cell</span><div class="use">Swoosh deep stop, imagery</div></div></div>
+    <div class="sw"><div class="chip" style="background:#014B44"></div><div class="meta"><div class="nm">Infusion Green</div><div class="hex">#014B44</div><span class="role">Infusion</span><div class="use">Deep teal accent</div></div></div>
+    <div class="sw"><div class="chip" style="background:#F2F9F8;border-bottom:1px solid #e8ecee"></div><div class="meta"><div class="nm">Plasma Tint</div><div class="hex">#F2F9F8</div><span class="role">Plasma</span><div class="use">Indication cards, quiet surfaces</div></div></div>
+    <div class="sw"><div class="chip" style="background:#2B2B2B"></div><div class="meta"><div class="nm">Reading Ink</div><div class="hex">#2B2B2B</div><span class="role">Reading</span><div class="use">Body &amp; safety copy</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #e8ecee"></div><div class="meta"><div class="nm">Mark White</div><div class="hex">#FFFFFF</div><span class="role">Ground</span><div class="use">Page ground; wordmark on bars</div></div></div>
+  </div>
+
+  <h3 style="margin:40px 0 4px;font-size:16px;color:var(--clinical)">Complement Swoosh — signature gradient</h3>
+  <div class="gradient-demo"></div>
+  <div class="grad-label"><span>#7D2346</span><span>#B12E6A</span><span>#F47E4D</span></div>
+  <p style="font-size:13px;color:#666;max-width:720px">Berry → magenta → orange, arcing over the white wordmark. Reserve for the logo and rare hero accents — never a body background.</p>
+</section>
+
+<!-- TYPE -->
+<section id="type">
+  <h2 class="sec">Typography — Roboto</h2>
+  <div class="type-row">
+    <div class="label"><b>Heading</b> · Roboto Bold / Black · 700–900 · line-height 1.25</div>
+    <div class="spec-head">Offer your patients the first and only long-acting terminal complement inhibitor</div>
+  </div>
+  <div class="type-row">
+    <div class="label"><b>Eyebrow</b> · Roboto Bold · uppercase · .12em</div>
+    <div class="spec-eyebrow">FDA approved for 4 indications</div>
+  </div>
+  <div class="type-row">
+    <div class="label"><b>Body</b> · Roboto Regular · 16px / 1.5 · Reading Ink</div>
+    <div class="spec-body">ULTOMIRIS, a complement inhibitor, increases the risk of serious infections caused by <span class="spec-accent">Neisseria meningitidis</span> <span class="spec-accent">[see Warnings and Precautions (5.1)]</span>. Because of this risk, ULTOMIRIS is available only through a restricted REMS program.</div>
+  </div>
+  <div class="type-row">
+    <div class="label"><b>Accent (italic)</b> · scientific names &amp; regulatory citations</div>
+    <div class="spec-body"><span class="spec-accent">Neisseria meningitidis</span> · <span class="spec-accent">see Warnings and Precautions (5.2)</span></div>
+  </div>
+  <div class="type-row">
+    <div class="label"><b>Link / CTA</b> · Roboto Semibold · Indication Rose</div>
+    <div class="spec-body"><span class="spec-link">Refer a Patient&nbsp;›</span></div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section id="voice">
+  <h2 class="sec">Voice</h2>
+  <p class="voice-char">Clinical, authoritative, and disclosure-first. Speaks peer-to-peer to physicians with evidence and precision, never hype.</p>
+  <div class="tags">
+    <span class="tag-this">Authoritative</span>
+    <span class="tag-this">Evidence-based</span>
+    <span class="tag-this">Precise</span>
+    <span class="tag-this">Transparent</span>
+    <span class="tag-this">Clinical</span>
+    <span class="tag-not">Promotional</span>
+    <span class="tag-not">Casual</span>
+    <span class="tag-not">Exclamatory</span>
+    <span class="tag-not">Vague</span>
+    <span class="tag-not">Emotional</span>
+  </div>
+  <div class="ex-grid">
+    <div class="ex do">
+      <div class="k">Do</div>
+      <div class="quote">"Offer your patients the first and only long-acting terminal complement inhibitor¹"</div>
+      <div class="why">Physician-directed, precise claim, reference marker carries the evidence.</div>
+    </div>
+    <div class="ex dont">
+      <div class="k">Don't</div>
+      <div class="quote">"ULTOMIRIS is the amazing breakthrough that changes everything for your patients!"</div>
+      <div class="why">Hype, exclamation, unreferenced superlative — fails regulatory and brand standards.</div>
+    </div>
+    <div class="ex do">
+      <div class="k">Do</div>
+      <div class="quote">"ULTOMIRIS increases the risk of serious infections caused by <em>Neisseria meningitidis</em> [see Warnings and Precautions (5.1)]"</div>
+      <div class="why">Risk stated up front, italic organism name, cited section — disclosure-first.</div>
+    </div>
+    <div class="ex dont">
+      <div class="k">Don't</div>
+      <div class="quote">"A simple, worry-free treatment your patients will love."</div>
+      <div class="why">Minimizes risk, emotional promise, ignores the Boxed Warning.</div>
+    </div>
+  </div>
+  <ul class="rules">
+    <li>Every efficacy claim is paired with its reference and accompanied by required safety information.</li>
+    <li>Never minimize or omit the Boxed Warning on serious meningococcal infections.</li>
+    <li>No exclamation marks; no unsubstantiated superlatives.</li>
+    <li>Italicize scientific organism names; cite regulatory sections verbatim.</li>
+  </ul>
+</section>
+
+<!-- TONE -->
+<section id="tone">
+  <h2 class="sec">Tone Adaptation</h2>
+  <div class="cards">
+    <div class="card"><h3>To Educate</h3><p>Explain mechanism, dosing, and indications with clinical accuracy a prescriber can act on.</p></div>
+    <div class="card"><h3>To Reassure (with evidence)</h3><p>Build prescriber confidence through referenced data and transparent risk disclosure, not emotional appeal.</p></div>
+    <div class="card"><h3>To Disclose</h3><p>Surface safety information — Boxed Warning, contraindications, REMS — prominently and unambiguously.</p></div>
+  </div>
+  <div class="cards" style="margin-top:18px;">
+    <div class="card"><h3>Clever?</h3><p>Almost never. Restraint is the brand's sophistication; wit has no place beside a Boxed Warning.</p></div>
+    <div class="card"><h3>Clear?</h3><p>Always. Clarity and accuracy override every other consideration in regulated HCP copy.</p></div>
+  </div>
+</section>
+
+<!-- MOTIFS -->
+<section id="motifs">
+  <h2 class="sec">Motifs</h2>
+  <div class="motif">
+    <div class="demo demo-swoosh"></div>
+    <div class="txt"><h3>Complement Swoosh</h3><p>A diagonal arc gradient sweeping berry → magenta → orange, arcing up over the wordmark. The single most recognizable brand gesture.</p><div class="usage">Logo lockup and sparing hero accents. Never as a repeating pattern or section background.</div></div>
+  </div>
+  <div class="motif">
+    <div class="demo demo-mol">
+      <span class="blob" style="width:54px;height:54px;background:#B12E6A;left:24px;top:18px"></span>
+      <span class="blob" style="width:38px;height:38px;background:#F47E4D;left:96px;top:60px"></span>
+      <span class="blob" style="width:46px;height:46px;background:#008578;left:130px;top:24px"></span>
+      <span class="blob" style="width:30px;height:30px;background:#7D2346;left:60px;top:74px"></span>
+    </div>
+    <div class="txt"><h3>Watercolor molecular field</h3><p>Soft, semi-transparent complement proteins and blood cells scattered across the hero — berry-pink and teal-green clusters on white.</p><div class="usage">Low-opacity behind headlines; keeps the science present without competing with copy.</div></div>
+  </div>
+  <div class="motif">
+    <div class="demo demo-isi">Important Safety Information<br>Including Boxed Warning ⌄</div>
+    <div class="txt"><h3>Sticky ISI bar</h3><p>A persistent teal Important Safety Information bar carrying the Boxed Warning, expandable from the foot of the viewport.</p><div class="usage">Required regulatory disclosure — always visible on HCP pages.</div></div>
+  </div>
+  <div class="motif">
+    <div class="demo demo-card">NMOSD · gMG · aHUS · PNH</div>
+    <div class="txt"><h3>Plasma indication cards</h3><p>Pale-teal (#F2F9F8) tiles listing the four approved indications.</p><div class="usage">Indication overview rows; flat, quiet, square-cornered.</div></div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section id="components">
+  <h2 class="sec">Components</h2>
+  <p style="font-size:14px;color:#666;max-width:720px;margin-top:-12px">ULTOMIRIS favors flat berry text-link CTAs over filled pill buttons — square corners read clinical and documentary. Filled chrome (8px radius) is reserved for system/utility widgets.</p>
+  <div class="btnrow">
+    <a class="lnk-cta" href="#">Refer a Patient&nbsp;›</a>
+    <a class="lnk-cta" href="#">Prescribing Information&nbsp;›</a>
+    <a class="nav-cta" href="#">Dosing and Administration</a>
+  </div>
+  <div class="barnav">
+    <a href="#">About ULTOMIRIS</a>
+    <a href="#">Dosing and Administration</a>
+    <a href="#">Resources and Support</a>
+  </div>
+</section>
+
+<!-- IMAGERY -->
+<section id="imagery">
+  <h2 class="sec">Imagery Direction</h2>
+  <p class="voice-char" style="font-size:17px">Abstract scientific illustration over clean white — soft watercolor complement proteins and blood cells in berry-pink and teal-green. Minimal human photography on the HCP home experience.</p>
+  <div class="ex-grid">
+    <div class="ex do">
+      <div class="k">Do</div>
+      <div class="why" style="font-size:14px">Keep backgrounds white and uncluttered so dense clinical copy stays legible. Use molecular/cellular imagery to evoke mechanism of action. Any human imagery reads professional and clinical.</div>
+    </div>
+    <div class="ex dont">
+      <div class="k">Don't</div>
+      <div class="why" style="font-size:14px">No stock-photo emotional lifestyle imagery on the HCP hero. No imagery that crowds or obscures required safety information. No saturated photographic backgrounds behind body copy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <h2 class="sec">Content Pillars</h2>
+  <div class="cards">
+    <div class="card"><h3>Indications</h3><p>The four FDA-approved uses — NMOSD, gMG, aHUS, PNH — and the patients each serves.</p></div>
+    <div class="card"><h3>Dosing &amp; Administration</h3><p>Weight-based dosing, infusion schedules, and long-acting interval guidance for the care team.</p></div>
+    <div class="card"><h3>Safety &amp; REMS</h3><p>Boxed Warning, meningococcal risk, ACIP vaccination guidance, and the restricted-access REMS program.</p></div>
+    <div class="card"><h3>Support &amp; Resources</h3><p>Start forms, patient referral, prescribing information, and HCP support pathways.</p></div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section id="personas">
+  <h2 class="sec">Personas</h2>
+  <div class="cards">
+    <div class="persona">
+      <h3>The Prescribing Specialist</h3>
+      <p style="font-size:14px;color:#555">A neurologist, hematologist, or nephrologist evaluating ULTOMIRIS for a specific rare-disease indication.</p>
+      <div class="motto">"Show me the data and the risk, then the schedule."</div>
+      <div class="vals"><span>Clinical evidence</span><span>Patient safety</span><span>Dosing convenience</span><span>Regulatory clarity</span></div>
+    </div>
+    <div class="persona">
+      <h3>The Care-Team Coordinator</h3>
+      <p style="font-size:14px;color:#555">A nurse or pharmacist managing infusion logistics, REMS enrollment, and vaccination requirements.</p>
+      <div class="motto">"Tell me exactly what has to happen before the first infusion."</div>
+      <div class="vals"><span>Process clarity</span><span>Compliance</span><span>Reliable resources</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section id="logo">
+  <h2 class="sec">Logo</h2>
+  <div class="logo-grid">
+    <div class="logo-cell dark"><img src="assets/logo.svg" alt="ULTOMIRIS on navy"></div>
+    <div class="logo-cell teal"><img src="assets/logo.svg" alt="ULTOMIRIS on teal"></div>
+  </div>
+  <p style="font-size:13px;color:#666;margin-top:14px"><b>Clear space:</b> maintain space around the wordmark equal to the height of the swoosh arc. The white wordmark is built for the teal/navy bar; the colored swoosh provides its own contrast.</p>
+  <ul class="donts">
+    <li>Don't recolor the swoosh gradient or flatten it to a single hue.</li>
+    <li>Don't place the white wordmark on a light ground without the colored swoosh providing contrast.</li>
+    <li>Don't stretch, rotate, or separate the swoosh from the wordmark.</li>
+  </ul>
+</section>
+
+<!-- SPACING -->
+<section id="spacing">
+  <h2 class="sec">Spacing &amp; Shape</h2>
+  <div class="spaces">
+    <div class="space-blk"><div class="bar" style="width:8px;height:8px"></div>XS · 8</div>
+    <div class="space-blk"><div class="bar" style="width:16px;height:16px"></div>S · 16</div>
+    <div class="space-blk"><div class="bar" style="width:24px;height:24px"></div>M · 24</div>
+    <div class="space-blk"><div class="bar" style="width:32px;height:32px"></div>L · 32</div>
+    <div class="space-blk"><div class="bar" style="width:64px;height:64px"></div>XL · 64</div>
+  </div>
+  <div style="display:flex;gap:24px;margin-top:34px;align-items:flex-end">
+    <div style="text-align:center;font-size:12px;color:#6a6f73"><div style="width:120px;height:70px;background:var(--plasma);border:1px solid #cfe6e2;border-radius:0"></div>Flat · 0px</div>
+    <div style="text-align:center;font-size:12px;color:#6a6f73"><div style="width:120px;height:70px;background:var(--plasma);border:1px solid #cfe6e2;border-radius:8px"></div>Utility · 8px</div>
+  </div>
+</section>
+
+<footer class="bf">
+  ULTOMIRIS® (ravulizumab-cwvz) — brand board extracted from ultomirishcp.com · generated by /stardust:brand · 2026-06-17
+</footer>
+
+</body>
+</html>
