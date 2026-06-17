@@ -2,6 +2,17 @@
    two outlined contact cards separated by a vertical divider.
    Values from ultomirishcp.com source computed styles + visual reference. */
 
+/* Full-bleed: break the block out of the 1200px section wrapper to span the viewport.
+   The section wrapper is itself a `.section > div`, so raise specificity to win. */
+main .section > .cards-contact-wrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+}
+
 /* magenta -> orange gradient band, white text */
 .cards-contact {
   background-image: linear-gradient(90deg, var(--brand-magenta) 0%, var(--brand-orange) 100%);
