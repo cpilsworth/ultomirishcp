@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
-  padding: 32px 24px;
+  min-height: 280px;
+  padding: 56px 24px;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -71,8 +71,8 @@
 
 @media (width >= 900px) {
   .hero-banner {
-    min-height: 248px;
-    padding: 64px 32px;
+    min-height: 380px;
+    padding: 96px 32px;
   }
 
   .hero-banner h1,
