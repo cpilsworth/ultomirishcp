@@ -227,7 +227,8 @@
           "name": "hero-banner",
           "instances": [
             "main#main > section.hero"
-          ]
+          ],
+          "variant": "ahus"
         },
         {
           "name": "columns-media",

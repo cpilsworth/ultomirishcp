@@ -182,6 +182,9 @@ function parseSemanticHero(element, document) {
 
   cells.push([contentCell]);
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'hero-banner', cells });
+  // Emit the 'ahus' style variant -> renders as class="hero-banner ahus".
+  // The aHUS hero is a distinct design (teal band + overlaid right-side text),
+  // styled via .hero-banner.ahus in blocks/hero-banner/hero-banner.css.
+  const block = WebImporter.Blocks.createBlock(document, { name: 'hero-banner (ahus)', cells });
   element.replaceWith(block);
 }

@@ -114,7 +114,7 @@ var CustomImportScript = (() => {
       contentCell.appendChild(caption);
     }
     cells.push([contentCell]);
-    const block = WebImporter.Blocks.createBlock(document, { name: "hero-banner", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "hero-banner (ahus)", cells });
     element.replaceWith(block);
   }
 
@@ -823,6 +823,21 @@ var CustomImportScript = (() => {
       const hr = document.createElement("hr");
       main.appendChild(hr);
       WebImporter.rules.createMetadata(main, document);
+      const metaTable = Array.from(main.querySelectorAll("table")).find((t) => {
+        const firstCell = t.querySelector("th, td");
+        return firstCell && firstCell.textContent.trim().toLowerCase() === "metadata";
+      });
+      if (metaTable) {
+        const tbody = metaTable.querySelector("tbody") || metaTable;
+        const row = document.createElement("tr");
+        const key = document.createElement("td");
+        key.textContent = "template";
+        const value = document.createElement("td");
+        value.textContent = PAGE_TEMPLATE.name;
+        row.appendChild(key);
+        row.appendChild(value);
+        tbody.appendChild(row);
+      }
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       const path = WebImporter.FileUtils.sanitizePath(
