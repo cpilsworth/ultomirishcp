@@ -128,3 +128,126 @@
     padding: 48px 40px;
   }
 }
+
+/* =====================================================================
+   aHUS variant overrides -- SCOPED to body.ahus-home so the approved
+   homepage cards-support styling above is never affected.
+   Source: ultomirishcp.com/ahus  section.alexion-resources
+   - transparent cards (no tint/border/shadow)
+   - thin blue heading 36px/300, color #1b76a6
+   - black body text 18px/24px
+   - short horizontal gradient divider above the CTA
+   - square solid dark-blue uppercase CTA with trailing white caret
+   Values from computed styles (migration-work/cards-support-ahus-extracted.css)
+   ===================================================================== */
+
+/* Container: 2-up flex row, 50px gutter (mobile-first = stacked) */
+body.ahus-home .cards-support > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Card: transparent, centered, generous padding */
+body.ahus-home .cards-support > ul > li {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+body.ahus-home .cards-support .cards-support-card-body {
+  padding: 45px;
+  text-align: center;
+}
+
+/* Body paragraph: black, 18px */
+body.ahus-home .cards-support .cards-support-card-body p {
+  margin: 0 16px 16px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Logo image: keep natural size, centered */
+body.ahus-home .cards-support .cards-support-card-body > p:first-child {
+  margin: 0 0 40px;
+}
+
+body.ahus-home .cards-support .cards-support-card-body > p:first-child img {
+  max-width: 280px;
+  width: auto;
+  height: auto;
+}
+
+/* Heading: thin blue */
+body.ahus-home .cards-support .cards-support-card-body h2 {
+  margin: 0 0 25px;
+  color: #1b76a6;
+  font-family: var(--body-font-family);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.33;
+}
+
+/* Gradient divider rendered above the CTA paragraph (source <hr>, omitted
+   from authored content -- recreate with a ::before on the CTA wrapper) */
+body.ahus-home .cards-support .cards-support-card-body > p:last-child {
+  margin: 0;
+}
+
+body.ahus-home .cards-support .cards-support-card-body > p:last-child::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 6px;
+  margin: 27px auto 36px;
+  background-image: linear-gradient(to right, #14477d 0%, #1b76a6 50%, #00c2f3 100%);
+}
+
+/* CTA: square solid dark-blue, white uppercase, trailing caret */
+body.ahus-home .cards-support .cards-support-card-body > p > a {
+  gap: 12px;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 25px;
+  background-color: #14477d;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+body.ahus-home .cards-support .cards-support-card-body > p > a:hover,
+body.ahus-home .cards-support .cards-support-card-body > p > a:focus-visible {
+  background-color: #0f3760;
+  color: #fff;
+}
+
+/* Trailing white caret (source caret-right-white.png) */
+body.ahus-home .cards-support .cards-support-card-body > p > a::after {
+  width: 11px;
+  height: 15px;
+  background-color: #fff;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 15"><path d="M1 1l8 6.5L1 14"/></svg>') no-repeat center / contain;
+}
+
+/* Desktop: side-by-side with 50px gutter */
+@media (width >= 900px) {
+  body.ahus-home .cards-support > ul {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  body.ahus-home .cards-support > ul > li {
+    flex: 1 1 0;
+  }
+
+  body.ahus-home .cards-support .cards-support-card-body h2 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}

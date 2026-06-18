@@ -87,3 +87,82 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* ==========================================================================
+   aHUS page variant -- scoped under body.ahus-home so the approved homepage
+   (body class "appear", no "ahus-home") is never affected.
+   Source: ultomirishcp.com/ahus  section.end-of-page-ctas
+   Two-up centered cards on a teal gradient with an amber, square,
+   uppercase caret CTA. Values from source computed styles.
+   ========================================================================== */
+
+/* 2-up layout (mobile-first: single column, then two columns at >=900px) */
+body.ahus-home .cards-indication > ul {
+  grid-template-columns: 1fr;
+  gap: 31px;
+}
+
+/* card: teal gradient background, no radius, centered content */
+body.ahus-home .cards-indication > ul > li {
+  background-color: transparent;
+  background-image: linear-gradient(to right, rgb(68 111 106) -20%, rgb(4 168 152) 100%);
+  border-radius: 0;
+}
+
+/* card body: centered text, source padding */
+body.ahus-home .cards-indication .cards-indication-card-body {
+  padding: 44px 40px 60px;
+  text-align: center;
+}
+
+/* heading: light weight, white */
+body.ahus-home .cards-indication .cards-indication-card-body h2 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.33;
+}
+
+/* body copy: white */
+body.ahus-home .cards-indication .cards-indication-card-body p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+/* CTA: amber, square, uppercase, bold, with caret-right arrow */
+body.ahus-home .cards-indication .cards-indication-card-body p:last-child {
+  padding-top: 24px;
+}
+
+body.ahus-home .cards-indication .cards-indication-card-body p:last-child a:any-link {
+  gap: 12px;
+  padding: 10px 25px;
+  border-radius: 0;
+  background-color: #ffa300;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+body.ahus-home .cards-indication .cards-indication-card-body p:last-child a:any-link::after {
+  width: 11px;
+  height: 15px;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path d="M1 1l5 5-5 5" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / contain;
+}
+
+body.ahus-home .cards-indication .cards-indication-card-body p:last-child a:hover,
+body.ahus-home .cards-indication .cards-indication-card-body p:last-child a:focus-visible {
+  background-color: #e69500;
+  color: #fff;
+}
+
+/* desktop: two columns side by side */
+@media (width >= 900px) {
+  body.ahus-home .cards-indication > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

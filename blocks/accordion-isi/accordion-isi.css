@@ -108,3 +108,88 @@
   line-height: 24px;
   color: #000;
 }
+
+/* ==========================================================================
+ * aHUS page overrides (template body.ahus-home)
+ * Matches the always-expanded in-flow ISI (main#main > div.psp) on
+ * ultomirishcp.com/ahus. All rules scoped under body.ahus-home so the
+ * approved homepage variant is never affected.
+ * ========================================================================== */
+
+/* always-expanded on the aHUS page (in-flow ISI shows full body) */
+body.ahus-home .accordion-isi .accordion-isi-item-label {
+  background-color: rgb(0 114 103);
+  padding: 8px 0;
+  cursor: default;
+}
+
+/* hide the expand/collapse chevron — content is always shown */
+/* stylelint-disable-next-line no-descending-specificity */
+body.ahus-home .accordion-isi .accordion-isi-item-label::after {
+  display: none;
+}
+
+body.ahus-home .accordion-isi .accordion-isi-item-label p {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+/* force the body open regardless of details[open] state */
+body.ahus-home .accordion-isi .accordion-isi-item-body {
+  display: block;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  color: #000;
+}
+
+/* body paragraphs */
+body.ahus-home .accordion-isi .accordion-isi-item-body p {
+  margin: 0 0 16px;
+  color: #000;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* WARNING box: bordered group around the leading boxed-warning content */
+body.ahus-home .accordion-isi .accordion-isi-item-body .black-box-warning {
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 2px solid rgb(51 51 51);
+}
+
+/* boxed WARNING heading (first paragraph) centered */
+body.ahus-home .accordion-isi .accordion-isi-item-body .black-box-warning > p:first-child {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+/* strong sub-headings (CONTRAINDICATIONS, WARNINGS, etc.) — bold black */
+body.ahus-home .accordion-isi .accordion-isi-item-body strong {
+  color: #000;
+  font-weight: 700;
+}
+
+/* lists */
+body.ahus-home .accordion-isi .accordion-isi-item-body ul,
+body.ahus-home .accordion-isi .accordion-isi-item-body ol {
+  margin: 0 0 18px;
+  padding: 0 0 0 18px;
+}
+
+body.ahus-home .accordion-isi .accordion-isi-item-body li {
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+}
+
+/* links */
+body.ahus-home .accordion-isi .accordion-isi-item-body a:any-link {
+  color: var(--brand-magenta);
+  text-decoration: underline;
+  font-weight: 700;
+}
