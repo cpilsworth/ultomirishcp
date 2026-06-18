@@ -85,24 +85,24 @@
 }
 
 /* ==========================================================================
-   aHUS page-scoped overrides (body.ahus-home)
-   The aHUS hero is a different design from the homepage hero-banner:
+   aHUS style variant (.hero-banner.ahus)
+   A distinct hero design from the default homepage hero-banner:
    - mobile: image on top, text block on a teal background below
    - desktop: full-bleed background image with a centered text block
      overlaid on the right side
    Values extracted from ultomirishcp.com/ahus computed styles.
-   These rules are appended and scoped so the approved homepage is untouched.
+   Scoped to the .ahus variant class so the default hero-banner is untouched.
    ========================================================================== */
 
 /* Full-width: bleed the banner edge-to-edge (override section wrapper) */
-body.ahus-home .hero-banner-wrapper {
+.hero-banner-wrapper:has(.hero-banner.ahus) {
   max-width: unset;
   margin: 0;
   padding: 0;
 }
 
 /* Mobile-first: stacked layout on a teal background */
-body.ahus-home .hero-banner {
+.hero-banner.ahus {
   display: block;
   min-height: 0;
   padding: 0;
@@ -113,7 +113,7 @@ body.ahus-home .hero-banner {
 }
 
 /* Row 2 = text content block */
-body.ahus-home .hero-banner > div:last-child {
+.hero-banner.ahus > div:last-child {
   position: static;
   z-index: auto;
   box-sizing: border-box;
@@ -125,21 +125,21 @@ body.ahus-home .hero-banner > div:last-child {
 }
 
 /* Row 1 = image: full-width, sits on top of the text on mobile */
-body.ahus-home .hero-banner > div:first-child {
+.hero-banner.ahus > div:first-child {
   position: static;
   inset: auto;
   z-index: auto;
   margin: 0;
 }
 
-body.ahus-home .hero-banner > div:first-child > div,
-body.ahus-home .hero-banner > div:first-child picture {
+.hero-banner.ahus > div:first-child > div,
+.hero-banner.ahus > div:first-child picture {
   display: block;
   width: 100%;
   height: auto;
 }
 
-body.ahus-home .hero-banner > div:first-child img {
+.hero-banner.ahus > div:first-child img {
   display: block;
   width: 100%;
   height: auto;
@@ -147,7 +147,7 @@ body.ahus-home .hero-banner > div:first-child img {
 }
 
 /* Headline */
-body.ahus-home .hero-banner h1 {
+.hero-banner.ahus h1 {
   margin: 0 0 10px;
   color: #fff;
   font-family: var(--body-font-family);
@@ -159,7 +159,7 @@ body.ahus-home .hero-banner h1 {
 }
 
 /* Remaining paragraphs (body copy + footnotes) */
-body.ahus-home .hero-banner > div:last-child p {
+.hero-banner.ahus > div:last-child p {
   margin: 0 0 10px;
   color: #fff;
   font-weight: 400;
@@ -168,7 +168,7 @@ body.ahus-home .hero-banner > div:last-child p {
 }
 
 /* First paragraph is the large intro line */
-body.ahus-home .hero-banner > div:last-child p:first-of-type {
+.hero-banner.ahus > div:last-child p:first-of-type {
   margin: 0 0 20px;
   color: #fff;
   font-weight: 400;
@@ -176,13 +176,13 @@ body.ahus-home .hero-banner > div:last-child p:first-of-type {
   line-height: 33px;
 }
 
-body.ahus-home .hero-banner sup {
+.hero-banner.ahus sup {
   font-size: 0.7em;
 }
 
 /* CTA: solid orange button, square corners, uppercase bold.
    Raise specificity to beat the global a.button:any-link rules. */
-body.ahus-home .hero-banner > div:last-child p > a:any-link {
+.hero-banner.ahus > div:last-child p > a:any-link {
   display: inline-block;
   box-sizing: border-box;
   margin: 7px 0 16px;
@@ -199,7 +199,7 @@ body.ahus-home .hero-banner > div:last-child p > a:any-link {
   white-space: normal;
 }
 
-body.ahus-home .hero-banner > div:last-child p > a:any-link:hover {
+.hero-banner.ahus > div:last-child p > a:any-link:hover {
   background-color: rgb(230 147 0);
   color: #fff;
   text-decoration: none;
@@ -207,14 +207,14 @@ body.ahus-home .hero-banner > div:last-child p > a:any-link:hover {
 
 /* Desktop: full-bleed background image with overlaid text on the right */
 @media (width >= 900px) {
-  body.ahus-home .hero-banner {
+  .hero-banner.ahus {
     position: relative;
     min-height: 610px;
     padding: 0;
   }
 
   /* Row 2 text sits centered over the right portion of the image */
-  body.ahus-home .hero-banner > div:last-child {
+  .hero-banner.ahus > div:last-child {
     position: relative;
     z-index: 1;
     width: 43%;
@@ -224,26 +224,26 @@ body.ahus-home .hero-banner > div:last-child p > a:any-link:hover {
   }
 
   /* Row 1 image becomes the full-bleed background layer */
-  body.ahus-home .hero-banner > div:first-child {
+  .hero-banner.ahus > div:first-child {
     position: absolute;
     inset: 0;
     z-index: 0;
     margin: 0;
   }
 
-  body.ahus-home .hero-banner > div:first-child > div,
-  body.ahus-home .hero-banner > div:first-child picture,
-  body.ahus-home .hero-banner > div:first-child img {
+  .hero-banner.ahus > div:first-child > div,
+  .hero-banner.ahus > div:first-child picture,
+  .hero-banner.ahus > div:first-child img {
     width: 100%;
     height: 100%;
   }
 
-  body.ahus-home .hero-banner > div:first-child img {
+  .hero-banner.ahus > div:first-child img {
     object-fit: cover;
     object-position: 50% 0%;
   }
 
-  body.ahus-home .hero-banner h1 {
+  .hero-banner.ahus h1 {
     font-size: 50px;
     line-height: 60px;
   }

@@ -129,6 +129,29 @@ export default {
     const hr = document.createElement('hr');
     main.appendChild(hr);
     WebImporter.rules.createMetadata(main, document);
+
+    // Emit the page-template marker. decorateTemplateAndTheme() reads the
+    // resulting <meta name="template"> and adds it as a <body> class
+    // (body.ahus-home), which scopes the aHUS designs for the remaining blocks
+    // (columns-media, cards-support, cards-indication, accordion-isi).
+    // createMetadata() appends a metadata <table> (header cell "Metadata") to
+    // main; add a "template" row to it so the marker survives re-imports.
+    const metaTable = Array.from(main.querySelectorAll('table')).find((t) => {
+      const firstCell = t.querySelector('th, td');
+      return firstCell && firstCell.textContent.trim().toLowerCase() === 'metadata';
+    });
+    if (metaTable) {
+      const tbody = metaTable.querySelector('tbody') || metaTable;
+      const row = document.createElement('tr');
+      const key = document.createElement('td');
+      key.textContent = 'template';
+      const value = document.createElement('td');
+      value.textContent = PAGE_TEMPLATE.name;
+      row.appendChild(key);
+      row.appendChild(value);
+      tbody.appendChild(row);
+    }
+
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 
