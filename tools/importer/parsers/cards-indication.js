@@ -3,30 +3,55 @@
 /**
  * Parser for cards-indication.
  * Base block: cards (no-images / text-only variant).
- * Source: https://ultomirishcp.com/ (and indication-landing pages)
- * Generated: 2026-06-16
+ * Source: https://ultomirishcp.com/ , indication-landing pages, and /ahus
+ * Generated: 2026-06-16 (extended 2026-06-17 for aHUS resource cards)
  *
- * Source structure: an outer <awt-container> holding an eyebrow line
- * ("FDA APPROVED FOR 4 INDICATIONS:") in <awt-article-section> (default
- * content handled outside this block) and an inner grid <awt-container>
- * of card containers. Each card is an <awt-text-description-card> with:
- *   - <span slot="cardTitle">      -> heading
- *   - <div slot="cardDescription"> -> description paragraph (may contain
- *                                     <br><u>Limitation of Use:</u> ...)
- *   - <div slot="cta_buttons"> > <awt-btn href> -> CTA link
+ * This parser handles TWO different source structures and branches on which
+ * one it finds, producing the same text-only cards block table in both cases.
  *
- * Target: cards block, one row per card; each cell = heading + description + CTA link.
+ * BRANCH A — awt-* Lit cards (homepage + indication-landing pages):
+ *   An outer <awt-container> holding an eyebrow line in <awt-article-section>
+ *   (default content handled outside this block) and an inner grid
+ *   <awt-container> of card containers. Each card is an
+ *   <awt-text-description-card> with:
+ *     - <span slot="cardTitle">      -> heading
+ *     - <div slot="cardDescription"> -> description paragraph (may contain
+ *                                       <br><u>Limitation of Use:</u> ...)
+ *     - <div slot="cta_buttons"> > <awt-btn href> -> CTA link
+ *
+ * BRANCH B — aHUS resource cards (/ahus, selector section.end-of-page-ctas):
+ *   A <section class="end-of-page-ctas"> accent band wrapping a single <div>
+ *   that contains TWO side-by-side text-only card <div>s. Each card:
+ *     - <div> > <h2> heading (may contain <br class="large-only">)
+ *     - <div> > <p> description paragraph
+ *     - <a class="button ..." href> CTA link (sibling of the inner text div)
+ *   No images.
+ *
+ * Target (both branches): cards block, one row per card; each cell =
+ * heading + description paragraph + CTA link. Link hrefs preserved.
  */
 export default function parse(element, { document }) {
-  // Each indication card. Validated against source.html (awt-text-description-card).
-  const cards = Array.from(element.querySelectorAll('awt-text-description-card'));
+  // Detect which source structure this element uses.
+  const awtCards = Array.from(element.querySelectorAll('awt-text-description-card'));
 
-  // Empty-block guard: if no cards found, unwrap and bail.
-  if (!cards.length) {
+  const cells = awtCards.length
+    ? parseAwtCards(awtCards, document)
+    : parseSemanticCards(element, document);
+
+  // Empty-block guard: if nothing extracted, unwrap and bail.
+  if (!cells.length) {
     element.replaceWith(...element.childNodes);
     return;
   }
 
+  const block = WebImporter.Blocks.createBlock(document, { name: 'cards-indication', cells });
+  element.replaceWith(block);
+}
+
+/**
+ * BRANCH A: awt-text-description-card Lit cards (homepage / indication-landing).
+ */
+function parseAwtCards(cards, document) {
   const cells = [];
 
   cards.forEach((card) => {
@@ -70,12 +95,43 @@ export default function parse(element, { document }) {
     }
   });
 
-  // Empty-block guard after extraction.
-  if (!cells.length) {
-    element.replaceWith(...element.childNodes);
-    return;
-  }
+  return cells;
+}
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'cards-indication', cells });
-  element.replaceWith(block);
+/**
+ * BRANCH B: semantic HTML resource cards (aHUS section.end-of-page-ctas).
+ * Each card is a direct child <div> of the inner wrapper containing an
+ * <h2>+<p> text block and a sibling <a> CTA link.
+ */
+function parseSemanticCards(element, document) {
+  const cells = [];
+
+  // Card containers: prefer the inner grid wrapper's direct children, but fall
+  // back to any descendant div that holds a heading + CTA link if structure varies.
+  let cardEls = Array.from(element.querySelectorAll(':scope > div > div'));
+  // Keep only blocks that actually contain a heading (real cards), not stray wrappers.
+  cardEls = cardEls.filter((el) => el.querySelector('h1, h2, h3, h4'));
+
+  cardEls.forEach((card) => {
+    const cellContent = [];
+
+    // Heading: keep the source heading element (h2 in source), preserving any
+    // inline markup such as <br>.
+    const heading = card.querySelector('h1, h2, h3, h4');
+    if (heading) cellContent.push(heading);
+
+    // Description paragraph(s).
+    const paragraphs = Array.from(card.querySelectorAll('p'));
+    paragraphs.forEach((p) => cellContent.push(p));
+
+    // CTA link(s): keep real anchors, preserving href and label.
+    const links = Array.from(card.querySelectorAll('a[href]'));
+    links.forEach((a) => cellContent.push(a));
+
+    if (cellContent.length) {
+      cells.push([cellContent]);
+    }
+  });
+
+  return cells;
 }

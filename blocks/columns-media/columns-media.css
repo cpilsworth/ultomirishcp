@@ -131,3 +131,200 @@ main .section > .columns-media-wrapper {
     margin-top: 64px;
   }
 }
+
+/* ===========================================================================
+   aHUS page overrides — scoped to body.ahus-home ONLY.
+   The columns-media variant is shared with the approved homepage; do NOT
+   regress it. Every rule below is scoped under body.ahus-home and only
+   appends/overrides for the aHUS promo sections.
+
+   Source: ultomirishcp.com/ahus (computed-style extraction @1440px).
+   Layout: transparent background (NO warm-grey band), section padding
+   80px 0 (2-up dosing block 50px 0), inner row max-width 1177px padded
+   0 32px, 50/50 flex columns with 36px gap (flex 0 1 calc(50% - 18px)),
+   vertically centered, justify space-between. Reverse blocks (nth 2 & 5)
+   place the image on the right via row-reverse. The dosing block (nth 4,
+   no picture) is a 2-up text grid: 2 columns, 125px column-gap.
+   Heading: teal #098, weight 300, 36px/48px, em accent block
+   (Suomi Hand handwriting font on source — falls back to cursive locally).
+   Paragraph: #000 18px/24px. Footnote paragraphs 13px/17px.
+   CTA: solid amber #ffa300, white uppercase 18px/24px wt 700, no radius,
+   padding 10px 44px 10px 25px, trailing white right-caret arrow.
+   =========================================================================== */
+
+/* Remove the homepage warm-grey band; aHUS sections are transparent. */
+body.ahus-home main .section > .columns-media-wrapper {
+  width: auto;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 24px;
+  background-color: transparent;
+}
+
+/* Mobile-first: stacked rows, image above text. */
+body.ahus-home .columns-media.block {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body.ahus-home .columns-media > div {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+}
+
+body.ahus-home .columns-media > div > div {
+  order: 1;
+  min-width: 0;
+}
+
+/* image column first (above) on mobile */
+body.ahus-home .columns-media > div > .columns-media-img-col,
+body.ahus-home .columns-media > div > div:has(picture) {
+  order: 0;
+}
+
+/* Images fill their column */
+body.ahus-home .columns-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* "Actor portrayal" caption beneath/over image — small muted text */
+body.ahus-home .columns-media .columns-media-text:has(picture) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading: teal, light weight */
+body.ahus-home .columns-media h2 {
+  margin: 0 0 16px;
+  color: #098;
+  font-family: var(--body-font-family);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* The leading <em> renders as a larger handwriting-style accent line. */
+body.ahus-home .columns-media h2 em {
+  display: block;
+  margin-bottom: 4px;
+  color: #098;
+  font-family: "Suomi Hand", "Brush Script MT", cursive;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+/* Body copy */
+body.ahus-home .columns-media p {
+  margin: 0 0 16px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Footnote / abbreviation paragraphs (the trailing "X=..." definition lines,
+   or paragraphs that start with a superscript marker) render smaller. */
+body.ahus-home .columns-media .columns-media-text p:last-child,
+body.ahus-home .columns-media .columns-media-text p:has(sup:first-child) {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+/* CTA button: solid amber, white uppercase, trailing right-caret arrow.
+   Targets the plain link EDS leaves in a text cell. */
+body.ahus-home .columns-media .columns-media-text a:any-link {
+  position: relative;
+  display: inline-block;
+  margin: 8px 0 16px;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 44px 10px 25px;
+  background-color: #ffa300;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.ahus-home .columns-media .columns-media-text a:any-link:hover,
+body.ahus-home .columns-media .columns-media-text a:any-link:focus-visible {
+  background-color: #e69400;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* trailing white right-caret arrow (source caret-right-white.png, 11x15) */
+body.ahus-home .columns-media .columns-media-text a:any-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 11px;
+  height: 15px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 0 80%, 60% 50%, 0 20%);
+}
+
+/* Desktop: side-by-side 50/50, vertically centered, space-between. */
+@media (width >= 900px) {
+  body.ahus-home main .section > .columns-media-wrapper {
+    padding: 80px 32px;
+  }
+
+  body.ahus-home .columns-media > div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+  }
+
+  body.ahus-home .columns-media > div > div {
+    flex: 0 1 calc(50% - 18px);
+    order: unset;
+  }
+
+  body.ahus-home .columns-media h2 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  body.ahus-home .columns-media h2 em {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  /* Reverse blocks (videos-and-podcasts = 2nd, about-ahus = 5th wrapper):
+     image on the right. */
+  body.ahus-home main .section
+    > .columns-media-wrapper:nth-of-type(2) .columns-media > div,
+  body.ahus-home main .section
+    > .columns-media-wrapper:nth-of-type(5) .columns-media > div {
+    flex-direction: row-reverse;
+  }
+
+  /* 2-up text-only block (dosing-and-admin = 4th wrapper, no picture):
+     two equal text columns with a wide gap, top-aligned. */
+  body.ahus-home main .section
+    > .columns-media-wrapper:nth-of-type(4) .columns-media > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 0 64px;
+  }
+
+  body.ahus-home main .section
+    > .columns-media-wrapper:nth-of-type(4) .columns-media > div > div {
+    flex: unset;
+  }
+}
